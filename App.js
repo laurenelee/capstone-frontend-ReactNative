@@ -21,7 +21,7 @@ import Header from './src/components/header';
 const App = () => {
   // to render another component within another (also note how header is self closing)
   return (
-    <Header />
+    <Header headerText={'Volunteer Agency'} />
   );
 };
 
