@@ -1,9 +1,14 @@
+// 1 import library
+// 2 create Component
+// 3 render to device
+
 /**
 * Sample React Native App
 * https://github.com/facebook/react-native
 * @flow
 */
 
+// 1 import library
 import React, { Component } from 'react';
 import {
   Platform,
@@ -15,7 +20,7 @@ import {
 const App = () => {
   return (
     <View>
-    <Text> hi tanisha </Text>
+    <Text> hi tanisha, how are you? </Text>
     </View>
   );
 };
