@@ -16,6 +16,8 @@ import {
   Text,
   View
 } from 'react-native';
+// must provide a relative path to this next one bc we didnt create in npm
+import Header from './src/components/header';
 
 const App = () => {
   return (
