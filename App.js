@@ -13,19 +13,19 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 // must provide a relative path to this next one bc we didnt create in npm
 import Header from './src/components/header';
 
 const App = () => {
+  // to render another component within another (also note how header is self closing)
   return (
-    <View>
-    <Text> hi tanisha, how are you? </Text>
-    </View>
+    <Header />
   );
 };
+
+
 // sample starter code 1/3/18 commented out
 
 // const instructions = Platform.select({
