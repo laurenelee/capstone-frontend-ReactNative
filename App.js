@@ -20,12 +20,14 @@ import Header from './src/components/header';
 import AgencyList from './src/components/AgencyList';
 
 
-const App = () => {
+const App = () => (
   // to render another component within another (also note how header is self closing)
-  return (
-    <Header headerText={'Volunteer Agency'} />
-  );
-};
+  <View>
+  <Header headerText={'Volunteer Agency'} />
+  <AgencyList />
+  </View>
+);
+
 
 
 // sample starter code 1/3/18 commented out
