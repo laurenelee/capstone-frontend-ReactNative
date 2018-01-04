@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AgencyDetail from './AgencyDetail';
 
 // const AgencyList = () => {  (commented out 1/4/18 when learning class components as opposed to functional component)
 class AgencyList extends Component {
@@ -17,9 +18,10 @@ class AgencyList extends Component {
   // helper method to create list
   renderAgencies() {
     return this.state.agencies.map(agency =>
-      <Text key={agency.name}>{agency.name}</Text>
+      <AgencyDetail key={agency.id} agency={agency} />
     );
   }
+
 
   render() {
     console.log(this.state); // rendering twice (once empty and then full)
