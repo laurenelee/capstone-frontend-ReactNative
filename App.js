@@ -17,6 +17,8 @@ import {
 } from 'react-native';
 // must provide a relative path to this next one bc we didnt create in npm
 import Header from './src/components/header';
+import AgencyList from './src/components/AgencyList';
+
 
 const App = () => {
   // to render another component within another (also note how header is self closing)
