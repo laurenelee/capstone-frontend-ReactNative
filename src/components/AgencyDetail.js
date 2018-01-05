@@ -27,7 +27,9 @@ const AgencyDetail = ({ agency }) => {
     </CardSection>
 
     <CardSection>
-      <Button onPress={() => Linking.openURL(url)} />
+      <Button onPress={() => Linking.openURL(url)}>
+      Volunteer Here!
+      </Button>
     </CardSection>
 
     </Card>
