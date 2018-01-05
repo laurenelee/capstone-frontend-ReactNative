@@ -13,6 +13,7 @@ class UserForm extends Component {
 
       <CardSection>
         <Input
+        label="Name"
         value={this.state.text}
         onChangeText={text => this.setState({ text })}
         />

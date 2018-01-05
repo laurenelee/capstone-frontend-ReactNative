@@ -2,17 +2,20 @@ import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
 const Input = ({ label, value, onChangeText }) => {
+const { inputStyle, labelStyle, containerStyle } = styles;
+
   return (
-    <View>
-      <Text>{label}</Text>
+    <View style={containerStyle}>
+      <Text style={labelStyle}>{label}</Text>
       <TextInput
+      style={inputStyle}
         value={value}
         onChangeText={onChangeText}
-        style={{ height: 20, width: 100}}
       />
     </View>
   );
 };
+// style={{ height: 20, width: 100}} taken from textinput styling
 
 const styles = {
   inputStyle: {
@@ -28,7 +31,12 @@ const styles = {
     paddingLeft: 20,
     flex: 1
   },
-  containerStyle: {}
+  containerStyle: {
+    // height: 40,
+    // flex: 1,
+    flexDirection: 'row'
+    // align: 'center'
+  }
 };
 // export { Input }; // tutorial wants to do it this way... but it errors
 export default Input;
