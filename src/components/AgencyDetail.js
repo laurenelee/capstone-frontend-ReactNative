@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
 const AgencyDetail = ({ agency }) => {
-  const { name, volunteer_type, description, age_minimum, photo_url } = agency;
+  const { name, volunteer_type, description, age_minimum, photo_url, url } = agency;
   const { imageStyle, headerContentStyle, bold } = styles;
 
   return (
@@ -27,7 +27,7 @@ const AgencyDetail = ({ agency }) => {
     </CardSection>
 
     <CardSection>
-      <Button />
+      <Button onPress={() => Linking.openURL(url)} />
     </CardSection>
 
     </Card>
