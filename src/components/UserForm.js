@@ -19,7 +19,7 @@ class UserForm extends Component {
       </CardSection>
 
       <CardSection>
-        <TextInput style={{ height: 20, width: 100 }} />
+        
       </CardSection>
 
       <CardSection>

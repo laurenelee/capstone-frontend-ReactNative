@@ -19,6 +19,7 @@ import {
 import Header from './src/components/header';
 import AgencyList from './src/components/AgencyList';
 import UserForm from './src/components/UserForm';
+import Input from './src/components/Input';
 
 
 const App = () => (
