@@ -5,25 +5,25 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 const AgencyDetail = ({ agency }) => {
-  const { name, volunteer_type, description, age_minimum } = agency;
+  const { name, volunteer_type, description, age_minimum, photo_url } = agency;
   const { imageStyle, headerContentStyle, bold } = styles;
 
   return (
     <Card>
 
     <CardSection>
-    <View>
-    <Image
-    style={imageStyle}
-    source= {{ uri: 'https://lorempixel.com/300/400/nature/' }}
-    />
-    </View>
-    <View style={headerContentStyle}>
-    <Text style={bold}>{name}</Text>
-    <Text><B>Volunteer Type: </B> {volunteer_type}</Text>
-    <Text><B>Description:</B> {description}</Text>
-    <Text><B>Age Minimum:</B> {age_minimum}</Text>
-    </View>
+      <View>
+        <Image
+          style={imageStyle}
+          source= {{ uri: photo_url }}
+        />
+      </View>
+      <View style={headerContentStyle}>
+        <Text style={bold}>{name}</Text>
+        <Text><B>Volunteer Type: </B> {volunteer_type}</Text>
+        <Text><B>Description:</B> {description}</Text>
+        <Text><B>Age Minimum:</B> {age_minimum}</Text>
+      </View>
     </CardSection>
 
     <CardSection>
@@ -51,8 +51,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 300,
-    height: 400,
+    width: 250,
+    height: 370,
   },
   bold: {
     fontWeight: 'bold',
