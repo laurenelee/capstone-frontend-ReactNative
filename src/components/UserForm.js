@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { TextInput } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
+import Input from './Input';
 
 class UserForm extends Component {
   state = { text: '' };
@@ -12,14 +12,14 @@ class UserForm extends Component {
       <Card>
 
       <CardSection>
-        <TextInput
+        <Input
         value={this.state.text}
         onChangeText={text => this.setState({ text })}
-        style={{ height: 20, width: 100 }} />
+        />
       </CardSection>
 
       <CardSection>
-        
+
       </CardSection>
 
       <CardSection>
