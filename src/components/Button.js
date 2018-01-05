@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
 const Button = () => {
   return (
-    <Text> Click me! </Text>
+    <TouchableOpacity>
+      <Text> Click me! </Text>
+    </TouchableOpacity>
   );
 };
 
