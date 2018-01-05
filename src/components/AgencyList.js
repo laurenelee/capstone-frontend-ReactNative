@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import axios from 'axios';
 import AgencyDetail from './AgencyDetail';
 
@@ -24,13 +24,16 @@ class AgencyList extends Component {
 
 
   render() {
+
     console.log(this.state); // rendering twice (once empty and then full)
     // now time to build a list of components! transform for each agency a component
     //  must use .map method
     return (
-      <View>
-      {this.renderAgencies()}
-      </View>
+      <ScrollView>
+        <View>
+          {this.renderAgencies()}
+        </View>
+      </ScrollView>
     );
   }
 }
