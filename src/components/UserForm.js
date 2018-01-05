@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { TextInput } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
 class UserForm extends Component {
+  state = { text: '' };
+
   render() {
     return (
       <Card>
-      <CardSection />
-      <CardSection />
+
+      <CardSection>
+        <TextInput
+        value={this.state.text}
+        onChangeText={text => this.setState({ text })}
+        style={{ height: 20, width: 100 }} />
+      </CardSection>
+
+      <CardSection>
+        <TextInput style={{ height: 20, width: 100 }} />
+      </CardSection>
+
       <CardSection>
         <Button>
           Find Opportunities!
         </Button>
       </CardSection>
+
       </Card>
     );
   }
