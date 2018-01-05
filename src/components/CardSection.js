@@ -16,6 +16,7 @@ const styles = {
     backgroundColor: '#fff',
     justifyContent: 'center', //was flex-start
     flexDirection: 'column', // was row
+    alignItems: 'center', // this finally centered the image! 1/5/18
     borderColor: '#ddd',
     position: 'relative'
   }
