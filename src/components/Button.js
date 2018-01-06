@@ -23,7 +23,7 @@ const styles = {
     paddingBottom: 10
   },
   buttonStyle: {
-    flex: 1,
+    // flex: 1,
     alignSelf: 'stretch', //we want element to position itself to stretch
     backgroundColor: '#fff',
     borderWidth: 1,

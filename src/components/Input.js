@@ -1,14 +1,16 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
-const Input = ({ label, value, onChangeText }) => {
+const Input = ({ label, value, onChangeText, placeholder }) => {
 const { inputStyle, labelStyle, containerStyle } = styles;
 
   return (
     <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
-      style={inputStyle}
+        placeholder={placeholder}
+        autoCorrect={false}
+        style={inputStyle}
         value={value}
         onChangeText={onChangeText}
       />
@@ -34,8 +36,8 @@ const styles = {
   containerStyle: {
     // height: 40,
     // flex: 1,
-    flexDirection: 'row'
-    // align: 'center'
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 };
 // export { Input }; // tutorial wants to do it this way... but it errors
