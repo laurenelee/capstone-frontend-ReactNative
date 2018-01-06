@@ -20,15 +20,16 @@ import Header from './src/components/header';
 import AgencyList from './src/components/AgencyList';
 import UserForm from './src/components/UserForm';
 import Input from './src/components/Input';
+import Wrapper from './src/components/Wrapper';
 
 
 const App = () => (
   // to render another component within another (also note how header is self closing)
   <View>
   <Header headerText={'Volunteer Agency'} />
-  <UserForm />
-  <AgencyList />
+  <Wrapper />
   </View>
+
 );
 
 

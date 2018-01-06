@@ -5,6 +5,7 @@ import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
+// import { Slider } from 'react-native-elements'
 // import Slider from "react-native-slider";
 // import NMRangeSliderIOS from 'react-native-nmrangeslider-ios';
 
@@ -12,6 +13,13 @@ import Input from './Input';
 
 class UserForm extends Component {
   state = { name: '', age: '', volunteer_type: '', distance: '' };
+
+  onButtonPress() {
+    const { name, age, volunteer_type, distance } = this.state;
+    this.props.onSearch(volunteer_type) //this is the last thing that happens
+
+  }
+
   render() {
     let volunteer_type = [{
       value: 'seniors',
@@ -50,7 +58,7 @@ class UserForm extends Component {
     }, {
       value: 'sports and recreation',
     }];
-    const { dropdownStyle } = styles;
+    const { dropdownStyle, container } = styles;
 
     return (
       <Card>
@@ -85,11 +93,13 @@ class UserForm extends Component {
       <Dropdown
       style={dropdownStyle}
       label='Volunteer Type'
+      value={this.state.volunteer_type}
       data={volunteer_type}
+      onChangeText={volunteer_type => this.setState({ volunteer_type })}
       />
-      
+
       <CardSection>
-      <Button>
+      <Button onPress={this.onButtonPress.bind(this)}>
       Find Opportunities!
       </Button>
       </CardSection>
@@ -104,13 +114,13 @@ const styles = {
     paddingRight: 1,
     paddingLeft: 140,
     fontSize: 18
+  },
+  container: {
+    flex: 1,
+    // marginLeft: 10,
+    // marginRight: 10,
+    alignItems: "stretch",
+    justifyContent: "center"
   }
-  // container: {
-  //   flex: 1,
-  //   // marginLeft: 10,
-  //   // marginRight: 10,
-  //   alignItems: "stretch",
-  //   justifyContent: "center"
-  // }
 };
 export default UserForm;
