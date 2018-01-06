@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+// import { View, Text } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
+// import Slider from "react-native-slider";
+// import NMRangeSliderIOS from 'react-native-nmrangeslider-ios';
+
+
 
 class UserForm extends Component {
   state = { name: '', age: '', volunteer_type: '', distance: '' };
@@ -51,42 +56,42 @@ class UserForm extends Component {
       <Card>
 
       <CardSection>
-        <Input
-        placeholder="Ada Lovelace"
-        label="Name:"
-        value={this.state.name}
-        onChangeText={name => this.setState({ name })}
-        />
+      <Input
+      placeholder="Ada Lovelace"
+      label="Name:"
+      value={this.state.name}
+      onChangeText={name => this.setState({ name })}
+      />
       </CardSection>
 
       <CardSection>
-        <Input
-        placeholder="14"
-        label="Age:"
-        value={this.state.age}
-        onChangeText={age => this.setState({ age })}
-        />
+      <Input
+      placeholder="14"
+      label="Age:"
+      value={this.state.age}
+      onChangeText={age => this.setState({ age })}
+      />
+      </CardSection>
+
+      <CardSection>
+      <Input
+      placeholder="20 miles"
+      label="Search Distance:"
+      value={this.state.distance}
+      onChangeText={distance => this.setState({ distance })}
+      />
       </CardSection>
 
       <Dropdown
-        style={dropdownStyle}
-        label='Volunteer Type'
-        data={volunteer_type}
+      style={dropdownStyle}
+      label='Volunteer Type'
+      data={volunteer_type}
       />
-
+      
       <CardSection>
-        <Input
-        placeholder="5 miles"
-        label="Search Distance:"
-        value={this.state.distance}
-        onChangeText={distance => this.setState({ distance })}
-        />
-      </CardSection>
-
-      <CardSection>
-        <Button>
-        Find Opportunities!
-        </Button>
+      <Button>
+      Find Opportunities!
+      </Button>
       </CardSection>
 
       </Card>
@@ -100,5 +105,12 @@ const styles = {
     paddingLeft: 140,
     fontSize: 18
   }
+  // container: {
+  //   flex: 1,
+  //   // marginLeft: 10,
+  //   // marginRight: 10,
+  //   alignItems: "stretch",
+  //   justifyContent: "center"
+  // }
 };
 export default UserForm;
