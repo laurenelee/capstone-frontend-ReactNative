@@ -1,14 +1,52 @@
 import React, { Component } from 'react';
-import { Picker } from 'react-native';
+import { Dropdown } from 'react-native-material-dropdown';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
 
 class UserForm extends Component {
-  state = { name: '', age: '', volunteer_interest: '', distance: '' };
-
+  state = { name: '', age: '', volunteer_type: '', distance: '' };
   render() {
+    let volunteer_type = [{
+      value: 'seniors',
+    }, {
+      value: 'homelessness',
+    }, {
+      value: 'arts and culture',
+    }, {
+      value: 'animals',
+    }, {
+      value: 'advocacy and human rights',
+    }, {
+      value: 'children and youth',
+    }, {
+      value: 'computers and technology',
+    }, {
+      value: 'community',
+    }, {
+      value: 'education and literacy',
+    }, {
+      value: 'health and medicine',
+    }, {
+      value: 'disaster relief',
+    }, {
+      value: 'LGBT',
+    }, {
+      value: 'justice and legal',
+    }, {
+      value: 'environment',
+    }, {
+      value: 'faith-based',
+    }, {
+      value: 'crisis support',
+    }, {
+      value: 'immigrants and refugees',
+    }, {
+      value: 'sports and recreation',
+    }];
+    const { dropdownStyle } = styles;
+
     return (
       <Card>
 
@@ -30,16 +68,11 @@ class UserForm extends Component {
         />
       </CardSection>
 
-      <CardSection>
-        <Picker
-        label="Volunter Type:"
-          selectedValue={this.state.volunteer_interest}
-          onValueChange={(itemValue, itemIndex) => this.setState({volunteer_interest: itemValue})}>
-          <Picker.Item label="seniors" value="seniors" />
-          <Picker.Item label="homelessness" value="homelessness" />
-          <Picker.Item label="arts and culture" value="arts and culture" />
-        </Picker>
-      </CardSection>
+      <Dropdown
+        style={dropdownStyle}
+        label='Volunteer Type'
+        data={volunteer_type}
+      />
 
       <CardSection>
         <Input
@@ -52,7 +85,7 @@ class UserForm extends Component {
 
       <CardSection>
         <Button>
-          Find Opportunities!
+        Find Opportunities!
         </Button>
       </CardSection>
 
@@ -60,5 +93,12 @@ class UserForm extends Component {
     );
   }
 }
-
+const styles = {
+  dropdownStyle: {
+    color: '#000',
+    paddingRight: 1,
+    paddingLeft: 140,
+    fontSize: 18
+  }
+};
 export default UserForm;
