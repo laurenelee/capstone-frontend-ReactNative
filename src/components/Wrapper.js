@@ -13,13 +13,19 @@ class Wrapper extends Component {
       agencies: [],
       pageToshow: UserForm
     }
-
+    this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
   }
+
+  returnToForm() {
+    this.setState({
+      pageToshow: UserForm
+    })
+  }
+
   onSearch(volunteer_type) {
     console.log('searching ');
     fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}`)
-
     .then(function(response) {
       return response.json()
     }).then((json) => {
@@ -41,11 +47,9 @@ class Wrapper extends Component {
         {this.state.pageToshow == UserForm && (
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
-          <AgencyList agencies={this.state.agencies} />
+          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm} />
         )}
       </View>
-
-
     )
   }
 };

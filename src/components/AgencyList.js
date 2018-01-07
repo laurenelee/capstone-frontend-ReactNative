@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import AgencyDetail from './AgencyDetail';
+import Button from './Button';
 
 // const AgencyList = () => {  (commented out 1/4/18 when learning class components as opposed to functional component)
 class AgencyList extends Component {
@@ -34,6 +35,9 @@ class AgencyList extends Component {
       );}
   }
 
+  onButtonPress() {
+    this.props.returnToForm()
+  }
 
   render() {
 
@@ -42,9 +46,12 @@ class AgencyList extends Component {
     //  must use .map method
     return (
       <ScrollView>
-      <View>
-      {this.renderAgencies()}
-      </View>
+        <View>
+          <Button onPress={this.onButtonPress.bind(this)}>
+            Find More Opportunities!
+          </Button>
+          {this.renderAgencies()}
+        </View>
       </ScrollView>
     );
   }
