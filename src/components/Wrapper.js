@@ -30,10 +30,10 @@ class Wrapper extends Component {
   render() {
     return (
       <View>
-
-      <UserForm onSearch={this.onSearch}/>
-      <AgencyList agencies={this.state.agencies} />
+        <UserForm onSearch={this.onSearch}/>
+        <AgencyList agencies={this.state.agencies} />
       </View>
+
     )
   }
 };
