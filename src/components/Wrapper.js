@@ -3,14 +3,17 @@ import { View } from 'react-native';
 // import Header from './src/components/header';
 import AgencyList from './AgencyList';
 import UserForm from './UserForm';
+import Router from './Router';
 
 class Wrapper extends Component {
   constructor(props) {
     super(props);
 
     this.state  = {
-      agencies: []
+      agencies: [],
+      pageToshow: UserForm
     }
+
     this.onSearch = this.onSearch.bind(this);
   }
   onSearch(volunteer_type) {
@@ -19,20 +22,29 @@ class Wrapper extends Component {
 
     .then(function(response) {
       return response.json()
-      }).then((json) => {
-        console.log(json);
-        this.setState({agencies: json})
-
+    }).then((json) => {
+      console.log(json);
+      this.setState({
+        agencies: json,
+        pageToshow: AgencyList
       })
+
+    })
 
   }
 
   render() {
     return (
+      // start at UserForm
+      // if statement if the find opportunities button has been clicked, then see the matching agency list
       <View>
-        <UserForm onSearch={this.onSearch}/>
-        <AgencyList agencies={this.state.agencies} />
+        {this.state.pageToshow == UserForm && (
+          <UserForm onSearch={this.onSearch}/> ) }
+        {this.state.pageToshow == AgencyList && (
+          <AgencyList agencies={this.state.agencies} />
+        )}
       </View>
+
 
     )
   }
