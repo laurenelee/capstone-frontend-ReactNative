@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
+import AgencyDetail from './AgencyDetail';
 
 class Card extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class NoMoreCards extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.noMoreCardsText}>No more cards</Text>
+        <Text style={styles.noMoreCardsText}>No more agencies</Text>
       </View>
     )
   }

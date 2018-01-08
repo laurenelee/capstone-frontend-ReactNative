@@ -85,7 +85,7 @@ class UserForm extends Component {
 
       <CardSection>
       <Input
-      placeholder="98122"
+      placeholder="98101"
       label="Zipcode:"
       value={this.state.zip}
       onChangeText={zip => this.setState({ zip })}
