@@ -12,10 +12,10 @@ import Input from './Input';
 
 
 class UserForm extends Component {
-  state = { name: '', age: '', volunteer_type: '', distance: '' };
+  state = { name: '', age: '', volunteer_type: '', zip: '', parent_email: '' };
 
   onButtonPress() {
-    const { name, age, volunteer_type, distance } = this.state;
+    const { name, age, volunteer_type, zip, parent_email } = this.state;
     this.props.onSearch(volunteer_type) //this is the last thing that happens
 
   }
@@ -83,10 +83,19 @@ class UserForm extends Component {
 
       <CardSection>
       <Input
-      placeholder="20 miles"
-      label="Search Distance:"
-      value={this.state.distance}
-      onChangeText={distance => this.setState({ distance })}
+      placeholder="98122"
+      label="Zipcode:"
+      value={this.state.zip}
+      onChangeText={zip => this.setState({ zip })}
+      />
+      </CardSection>
+
+      <CardSection>
+      <Input
+      placeholder="mom@email.com"
+      label="Parent Email:"
+      value={this.state.parent_email}
+      onChangeText={zip => this.setState({ parent_email })}
       />
       </CardSection>
 

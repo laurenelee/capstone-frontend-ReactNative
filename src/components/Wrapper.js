@@ -3,7 +3,8 @@ import { View } from 'react-native';
 // import Header from './src/components/header';
 import AgencyList from './AgencyList';
 import UserForm from './UserForm';
-import Router from './Router';
+// import Router from './Router';
+import SwipeCards from './SwipeCard';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class Wrapper extends Component {
         {this.state.pageToshow == UserForm && (
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
-          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm} />
+          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm} SwipeCards/>
         )}
       </View>
     )
