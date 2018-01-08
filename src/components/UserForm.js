@@ -16,7 +16,9 @@ class UserForm extends Component {
 
   onButtonPress() {
     const { name, age, volunteer_type, zip, parent_email } = this.state;
-    this.props.onSearch(volunteer_type) //this is the last thing that happens
+    this.props.onSearch(volunteer_type, zip)
+    // this.props.onSearch(zip)
+    //this is the last thing that happens
 
   }
 

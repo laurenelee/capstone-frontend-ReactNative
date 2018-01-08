@@ -5,7 +5,7 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 const AgencyDetail = ({ agency }) => {
-  const { name, volunteer_type, description, age_minimum, photo_url, url } = agency;
+  const { name, volunteer_type, description, age_minimum, photo_url, url, zip } = agency;
   const { imageStyle, headerContentStyle, bold } = styles;
 
   return (
@@ -23,6 +23,7 @@ const AgencyDetail = ({ agency }) => {
         <Text><B>Volunteer Type: </B> {volunteer_type}</Text>
         <Text><B>Description:</B> {description}</Text>
         <Text><B>Age Minimum:</B> {age_minimum}</Text>
+        <Text><B>Zipcode:</B> {zip} </Text>
       </View>
     </CardSection>
 

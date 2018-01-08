@@ -24,9 +24,9 @@ class Wrapper extends Component {
     })
   }
 
-  onSearch(volunteer_type) {
+  onSearch(volunteer_type, zip) {
     console.log('searching ');
-    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}`)
+    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}`)
     .then(function(response) {
       return response.json()
     }).then((json) => {
@@ -48,7 +48,11 @@ class Wrapper extends Component {
         {this.state.pageToshow == UserForm && (
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
-          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm} SwipeCards/>
+          <View>
+          <SwipeCards />
+
+          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm}/>
+          </View>
         )}
       </View>
     )
