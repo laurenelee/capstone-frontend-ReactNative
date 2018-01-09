@@ -49,7 +49,6 @@ class Wrapper extends Component {
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
           <View>
-          <SwipeCards />
 
           <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm}/>
           </View>
