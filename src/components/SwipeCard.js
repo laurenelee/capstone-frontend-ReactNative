@@ -6,6 +6,11 @@ import AgencyDetail from './AgencyDetail';
 class Card extends React.Component {
   constructor(props) {
     super(props);
+    // new 1/9/17
+    // this.state  = {
+    //   agencies: props.agencies
+    // }
+
   }
 
   render() {

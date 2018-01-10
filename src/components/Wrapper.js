@@ -5,6 +5,7 @@ import AgencyList from './AgencyList';
 import UserForm from './UserForm';
 // import Router from './Router';
 import SwipeCards from './SwipeCard';
+import AgencyDetail from './AgencyDetail';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class Wrapper extends Component {
       pageToshow: UserForm
     })
   }
-
-  onSearch(volunteer_type, zip) {
+// http://localhost:3000/search?volunteer_type=environment&zip=98104&age_minimum=17
+  onSearch(volunteer_type, zip, age_minimum) {
     console.log('searching ');
-    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}`)
+    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`) 
     .then(function(response) {
       return response.json()
     }).then((json) => {
@@ -49,8 +50,8 @@ class Wrapper extends Component {
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
           <View>
-
-          <AgencyList agencies={this.state.agencies} returnToForm={this.returnToForm}/>
+            <AgencyList agencies={this.state.agencies}
+            returnToForm={this.returnToForm}/>
           </View>
         )}
       </View>

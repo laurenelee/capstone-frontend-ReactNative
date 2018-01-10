@@ -45,15 +45,18 @@ class AgencyList extends Component {
     console.log(this.state); // rendering twice (once empty and then full)
     // now time to build a list of components! transform for each agency a component
     //  must use .map method
+    // </ScrollView>
+
     return (
-      <ScrollView>
       <View>
-      <Button onPress={this.onButtonPress.bind(this)}>
-      Find More Opportunities!
-      </Button>
-      {this.renderAgencies()}
+        <ScrollView>
+        <Button onPress={this.onButtonPress.bind(this)}>
+        Find More Opportunities!
+        </Button>
+        <SwipeCards />
+        {this.renderAgencies()}
+        </ScrollView>
       </View>
-      </ScrollView>
     );
   }
 }

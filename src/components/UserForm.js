@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import Card from './Card';
 import CardSection from './CardSection';
@@ -12,14 +12,19 @@ import Input from './Input';
 
 
 class UserForm extends Component {
-  state = { name: '', age: '', volunteer_type: '', zip: '', parent_email: '' };
+  state = { name: '', age_minimum: '', volunteer_type: '', zip: '', parent_email: '' };
 
   onButtonPress() {
-    const { name, age, volunteer_type, zip, parent_email } = this.state;
-    this.props.onSearch(volunteer_type, zip)
+    const { name, age_minimum, volunteer_type, zip, parent_email } = this.state;
+
     // this.props.onSearch(zip)
     //this is the last thing that happens
 
+    if (name == '' || age_minimum == '' || zip == '' || parent_email == '' || volunteer_type == '') {
+      this.setState( {error: 'All fields required'});
+    } else {
+        this.props.onSearch(volunteer_type, zip, age_minimum)
+    };
   }
 
   render() {
@@ -60,7 +65,7 @@ class UserForm extends Component {
     }, {
       value: 'sports and recreation',
     }];
-    const { dropdownStyle, container } = styles;
+    const { dropdownStyle, container, errorTextStyle } = styles;
 
     return (
       <Card>
@@ -78,8 +83,8 @@ class UserForm extends Component {
       <Input
       placeholder="14"
       label="Age:"
-      value={this.state.age}
-      onChangeText={age => this.setState({ age })}
+      value={this.state.age_minimum}
+      onChangeText={age_minimum => this.setState({ age_minimum })}
       />
       </CardSection>
 
@@ -97,7 +102,7 @@ class UserForm extends Component {
       placeholder="mom@email.com"
       label="Parent Email:"
       value={this.state.parent_email}
-      onChangeText={zip => this.setState({ parent_email })}
+      onChangeText={parent_email => this.setState({ parent_email })}
       />
       </CardSection>
 
@@ -108,6 +113,10 @@ class UserForm extends Component {
       data={volunteer_type}
       onChangeText={volunteer_type => this.setState({ volunteer_type })}
       />
+
+      <Text style={errorTextStyle}>
+      {this.state.error}
+      </Text>
 
       <CardSection>
       <Button onPress={this.onButtonPress.bind(this)}>
@@ -132,6 +141,11 @@ const styles = {
     // marginRight: 10,
     alignItems: "stretch",
     justifyContent: "center"
+  },
+  errorTextStyle: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'red'
   }
 };
 export default UserForm;
