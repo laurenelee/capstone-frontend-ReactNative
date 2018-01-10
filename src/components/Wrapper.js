@@ -27,7 +27,7 @@ class Wrapper extends Component {
 // http://localhost:3000/search?volunteer_type=environment&zip=98104&age_minimum=17
   onSearch(volunteer_type, zip, age_minimum) {
     console.log('searching ');
-    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`) 
+    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`)
     .then(function(response) {
       return response.json()
     }).then((json) => {
