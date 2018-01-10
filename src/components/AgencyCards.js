@@ -6,17 +6,13 @@ import AgencyDetail from './AgencyDetail';
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    // new 1/9/17
-    // this.state  = {
-    //   agencies: props.agencies
-    // }
-
   }
-
+// props data is the WHOLE list of data from agency detail
   render() {
     return (
       <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
-        <Text>{this.props.text}</Text>
+        <Text>{this.props.name}</Text>
+
       </View>
     )
   }
@@ -36,19 +32,13 @@ class NoMoreCards extends Component {
   }
 }
 
-export default class extends React.Component {
+class AgencyCards extends React.Component {
   constructor(props) {
     super(props);
+      console.log(props.list);
     this.state = {
       // agency list (individual agency)
-      cards: [
-        {text: 'Red Cross', backgroundColor: 'red'},
-        {text: 'Homeless Shelter', backgroundColor: 'purple'},
-        {text: 'Soup Kitchen', backgroundColor: 'green'},
-        {text: 'Food Bank', backgroundColor: 'blue'},
-        {text: 'Orphnage', backgroundColor: 'cyan'},
-        {text: 'Seniors Home', backgroundColor: 'orange'},
-      ]
+      cards: props.list
     };
   }
 
@@ -64,6 +54,9 @@ export default class extends React.Component {
   render() {
     // If you want a stack of cards instead of one-per-one view, activate stack mode
     // stack={true}
+
+    // cards is agency list
+    // cardData is agency detail
     return (
       <SwipeCards
         cards={this.state.cards}
@@ -90,3 +83,5 @@ const styles = StyleSheet.create({
     fontSize: 22,
   }
 })
+
+export default AgencyCards;

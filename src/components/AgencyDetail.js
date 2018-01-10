@@ -3,7 +3,6 @@ import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
-import SwipeCards from './SwipeCard';
 
 
 const AgencyDetail = ({ agency }) => {
@@ -41,11 +40,6 @@ const AgencyDetail = ({ agency }) => {
 };
 // playing with styling in a different way
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
-// const Big = (props) => <Text style={{
-//   fontWeight: 'bold',
-//   fontSize: 30
-// }}>{props.children}</Text>
-
 // styling from tutorial
 const styles = {
   headerContentStyle: {

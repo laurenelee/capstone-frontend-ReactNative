@@ -3,7 +3,7 @@ import { Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import AgencyDetail from './AgencyDetail';
 import Button from './Button';
-import SwipeCards from './SwipeCard';
+import AgencyCards from './AgencyCards';
 
 // const AgencyList = () => {  (commented out 1/4/18 when learning class components as opposed to functional component)
 class AgencyList extends Component {
@@ -53,7 +53,7 @@ class AgencyList extends Component {
         <Button onPress={this.onButtonPress.bind(this)}>
         Find More Opportunities!
         </Button>
-        <SwipeCards />
+        <AgencyCards list={ this.state.agencies }/>
         {this.renderAgencies()}
         </ScrollView>
       </View>
