@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, Image, Linking, TouchableHighlight} from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
-// import AgencyDetail from './AgencyDetail';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import IconButton from './IconButton';
@@ -33,12 +32,12 @@ class Card extends React.Component {
 
         <CardSection>
           <View style={styles.icons}>
-            <IconButton onPress={() => Linking.openURL(this.props.url)}>
-            Volunteer Here!
+            <IconButton>
+            No thanks
             </IconButton>
 
-            <IconButton onPress={() => console.log(`nope for ${this.props.name}`)}>
-            No thanks
+            <IconButton onPress={() => Linking.openURL(this.props.url)}>
+            Volunteer Here!
             </IconButton>
           </View>
         </CardSection>
@@ -70,7 +69,6 @@ class AgencyCards extends React.Component {
     super(props);
       console.log(props.list);
     this.state = {
-      // agency list (individual agency)
       cards: props.list
     };
   }
@@ -85,9 +83,6 @@ class AgencyCards extends React.Component {
     console.log(`Maybe for ${card.name}`)
   }
   render() {
-    // If you want a stack of cards instead of one-per-one view, activate stack mode
-    // stack={true}
-
     // cards is agency list
     // cardData is agency detail
     return (
@@ -129,8 +124,7 @@ const styles = StyleSheet.create({
   },
   icons: {
     flexDirection: 'row',
-    paddingTop: 10,
-
+    paddingTop: 10
   }
 })
 
