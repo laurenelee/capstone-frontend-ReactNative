@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Linking} from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
-import AgencyDetail from './AgencyDetail';
+// import AgencyDetail from './AgencyDetail';
+import CardSection from './CardSection';
+import IndividualCard from './IndividualCard';
+import Button from './Button';
 
 class Card extends React.Component {
   constructor(props) {
@@ -10,10 +13,32 @@ class Card extends React.Component {
 // props data is the WHOLE list of data from agency detail
   render() {
     return (
-      <View style={[styles.card, {backgroundColor: this.props.backgroundColor}]}>
-        <Text>{this.props.name}</Text>
+      <IndividualCard>
 
-      </View>
+          <CardSection>
+          <View>
+            <Image
+            style={styles.imageStyle}
+            source= {{ uri: this.props.photo_url }}
+            />
+          </View>
+
+          <View style={styles.headerContentStyle}>
+            <Text style={styles.bold}>{this.props.name}</Text>
+            <Text><B>Volunteer Type: </B> {this.props.volunteer_type}</Text>
+            <Text><B>Description:  </B>{this.props.description}</Text>
+            <Text><B>Zipcode: </B>{this.props.zip}</Text>
+            <Text><B>Age Minimum: </B>{this.props.age_minimum}</Text>
+          </View>
+        </CardSection>
+
+        <CardSection>
+          <Button onPress={() => Linking.openURL(this.props.url)}>
+          Volunteer Here!
+          </Button>
+        </CardSection>
+
+      </IndividualCard>
     )
   }
 }
@@ -71,6 +96,7 @@ class AgencyCards extends React.Component {
     )
   }
 }
+const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = StyleSheet.create({
   card: {
@@ -81,6 +107,22 @@ const styles = StyleSheet.create({
   },
   noMoreCardsText: {
     fontSize: 22,
+  },
+  bold: {
+    fontWeight: 'bold',
+    fontSize: 30
+  },
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  imageStyle: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 250,
+    height: 370,
   }
 })
 

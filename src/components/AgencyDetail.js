@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, Linking } from 'react-native';
-import Card from './Card';
+import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import Button from './Button';
 
@@ -9,7 +9,6 @@ const AgencyDetail = ({ agency }) => {
   const { name, volunteer_type, description, age_minimum, photo_url, url, zip } = agency;
   const { imageStyle, headerContentStyle, bold } = styles;
 
-// Card
   return (
     <Card>
 

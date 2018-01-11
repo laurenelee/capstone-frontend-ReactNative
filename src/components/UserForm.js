@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
-import Card from './Card';
+import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
@@ -68,7 +68,7 @@ class UserForm extends Component {
     const { dropdownStyle, container, errorTextStyle } = styles;
 
     return (
-      <Card>
+      <IndividualCard>
 
       <CardSection>
       <Input
@@ -124,7 +124,7 @@ class UserForm extends Component {
       </Button>
       </CardSection>
 
-      </Card>
+      </IndividualCard>
     );
   }
 }

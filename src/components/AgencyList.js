@@ -54,7 +54,6 @@ class AgencyList extends Component {
         Find More Opportunities!
         </Button>
         <AgencyCards list={ this.state.agencies }/>
-        {this.renderAgencies()}
         </ScrollView>
       </View>
     );
