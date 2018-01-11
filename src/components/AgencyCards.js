@@ -5,10 +5,15 @@ import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import IconButton from './IconButton';
 
+const SWIPE_THRESHOLD = 40;
+
 class Card extends React.Component {
   constructor(props) {
     super(props);
   }
+  // renderSwipedLeft() {
+  //   this.renderSwipedLeft = renderNope()
+  // }
 // props data is the WHOLE list of data from agency detail
   render() {
     return (
@@ -32,7 +37,7 @@ class Card extends React.Component {
 
         <CardSection>
           <View style={styles.icons}>
-            <IconButton>
+            <IconButton renderSwipedLeft={this.renderenderSwipedLeft}>
             No thanks
             </IconButton>
 
@@ -86,7 +91,7 @@ class AgencyCards extends React.Component {
     // cards is agency list
     // cardData is agency detail
     return (
-      <SwipeCards
+      <SwipeCards style={{flex:1}}
         cards={this.state.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
