@@ -23,13 +23,13 @@ const styles = {
     paddingBottom: 10
   },
   buttonStyle: {
-    // flex: 1,
-    // alignSelf: 'stretch', //we want element to position itself to stretch
-    flexDirection: 'row',
-    // justifyContent: 'space-between',
-    // alignItems: 'center',
+    // flex: 1
     backgroundColor: '#fff',
+    borderRadius: 5,
+    marginRight: 3,
+    marginLeft: 3,
     width: 100,
+    height: 60,
     borderWidth: 1,
     borderColor: '#007aff'
   }

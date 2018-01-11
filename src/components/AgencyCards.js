@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image, Linking} from 'react-native';
+import {StyleSheet, Text, View, Image, Linking, TouchableHighlight} from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
 // import AgencyDetail from './AgencyDetail';
 import CardSection from './CardSection';
@@ -31,15 +31,17 @@ class Card extends React.Component {
           </View>
         </CardSection>
 
-        <View>
-          <IconButton onPress={() => Linking.openURL(this.props.url)}>
-          Volunteer Here!
-          </IconButton>
+        <CardSection>
+          <View style={styles.icons}>
+            <IconButton onPress={() => Linking.openURL(this.props.url)}>
+            Volunteer Here!
+            </IconButton>
 
-          <IconButton onPress={() => console.log(`nope for ${this.props.name}`)}>
-          No thanks
-          </IconButton>
-        </View>
+            <IconButton onPress={() => console.log(`nope for ${this.props.name}`)}>
+            No thanks
+            </IconButton>
+          </View>
+        </CardSection>
 
       </IndividualCard>
     )
@@ -124,6 +126,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 250,
     height: 270,
+  },
+  icons: {
+    flexDirection: 'row',
+    paddingTop: 10,
+
   }
 })
 
