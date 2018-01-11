@@ -4,7 +4,7 @@ import SwipeCards from 'react-native-swipe-cards';
 // import AgencyDetail from './AgencyDetail';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
-import Button from './Button';
+import IconButton from './IconButton';
 
 class Card extends React.Component {
   constructor(props) {
@@ -14,8 +14,7 @@ class Card extends React.Component {
   render() {
     return (
       <IndividualCard>
-
-          <CardSection>
+        <CardSection>
           <View>
             <Image
             style={styles.imageStyle}
@@ -32,11 +31,15 @@ class Card extends React.Component {
           </View>
         </CardSection>
 
-        <CardSection>
-          <Button onPress={() => Linking.openURL(this.props.url)}>
+        <View>
+          <IconButton onPress={() => Linking.openURL(this.props.url)}>
           Volunteer Here!
-          </Button>
-        </CardSection>
+          </IconButton>
+
+          <IconButton onPress={() => console.log(`nope for ${this.props.name}`)}>
+          No thanks
+          </IconButton>
+        </View>
 
       </IndividualCard>
     )
@@ -51,7 +54,10 @@ class NoMoreCards extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.noMoreCardsText}>No more agencies</Text>
+        <Text style={styles.noMoreCardsText}>
+          Out of matches!
+          No more agencies
+        </Text>
       </View>
     )
   }
@@ -67,14 +73,14 @@ class AgencyCards extends React.Component {
     };
   }
 
-  handleYup (card) {
-    console.log(`Yup for ${card.text}`)
+  handleYup(card) {
+    console.log(`Yup for ${card.name}`)
   }
-  handleNope (card) {
-    console.log(`Nope for ${card.text}`)
+  handleNope(card) {
+    console.log(`Nope for ${card.name}`)
   }
-  handleMaybe (card) {
-    console.log(`Maybe for ${card.text}`)
+  handleMaybe(card) {
+    console.log(`Maybe for ${card.name}`)
   }
   render() {
     // If you want a stack of cards instead of one-per-one view, activate stack mode
@@ -99,14 +105,9 @@ class AgencyCards extends React.Component {
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = StyleSheet.create({
-  card: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 300,
-    height: 300,
-  },
   noMoreCardsText: {
     fontSize: 22,
+    paddingTop: 20,
   },
   bold: {
     fontWeight: 'bold',
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 250,
-    height: 370,
+    height: 270,
   }
 })
 

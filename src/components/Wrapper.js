@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import AgencyList from './AgencyList';
 import UserForm from './UserForm';
 // import Router from './Router';
-import AgencyDetail from './AgencyDetail';
+// import AgencyDetail from './AgencyDetail';
 
 class Wrapper extends Component {
   constructor(props) {
