@@ -26,7 +26,7 @@ const styles = {
     // justifyContent: 'center',
     // alignItems: 'center',
     // width: 300,
-    // height: 300,
+    // height: 00,
 
   }
 };

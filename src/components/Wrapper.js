@@ -41,7 +41,6 @@ class Wrapper extends Component {
     this.setState({
       pageToshow: MatchPage
     })
-    console.log('checking that matchMoment is called');
   }
 
   render() {

@@ -36,11 +36,13 @@ class Card extends React.Component {
         <CardSection>
           <View style={styles.icons}>
             <IconButton onPress={this.handleNope}>
-             <Image source={require("../../x.png")}/>
+             <Image
+             style={{width: 50, height: 50}} source={require("../../x.png")}/>
             </IconButton>
 
             <IconButton onPress={() => Linking.openURL(this.props.url)}>
-            <Image source={require("../../heart.png")}/>
+            <Image
+            style={{width: 50, height: 50}} source={require("../../heart.png")}/>
             </IconButton>
           </View>
         </CardSection>
@@ -74,15 +76,11 @@ class AgencyCards extends React.Component {
     this.state = {
       cards: props.list,
       matchMoment: props.matchMoment
-    };
-
-    console.log('foo', this.state.matchMoment);
-
+    }
   }
+
   handleYup(card) {
-    console.log(`Yup for ${card.name} ${card.volunteer_type}`)
-    console.log(card)
-    // this.setState({pageToshow: MatchPage})
+    // console.log(`Yup for ${card.name} ${card.volunteer_type}`)
     this.props.matchMoment(card)
   }
   handleNope(card) {
@@ -135,8 +133,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
-    width: 50,
-    height: 50,
+    // width: 50,
+    // height: 50,
   }
 })
 
