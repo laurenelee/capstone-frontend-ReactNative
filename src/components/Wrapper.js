@@ -38,9 +38,12 @@ class Wrapper extends Component {
   }
 
   matchMoment(card) {
+    this.state.card = card
     this.setState({
       pageToshow: MatchPage
     })
+
+    console.log('checking that matchMoment is called');
   }
 
   render() {
