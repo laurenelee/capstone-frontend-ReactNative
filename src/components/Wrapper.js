@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-// import Header from './src/components/header';
 import AgencyList from './AgencyList';
 import UserForm from './UserForm';
 import MatchPage from './MatchPage';
-// import AgencyDetail from './AgencyDetail';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -43,18 +41,18 @@ class Wrapper extends Component {
     this.setState({
       pageToshow: MatchPage
     })
+    console.log('checking that matchMoment is called');
   }
 
   render() {
     return (
-      // start at UserForm
-      // if the find opportunities button has been clicked, then see the matching agency list
       <View>
         {this.state.pageToshow == UserForm && (
           <UserForm onSearch={this.onSearch}/> ) }
         {this.state.pageToshow == AgencyList && (
           <View>
             <AgencyList agencies={this.state.agencies}
+            matchMoment={this.matchMoment}
             returnToForm={this.returnToForm}/>
           </View>
         )}

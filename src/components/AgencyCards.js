@@ -72,8 +72,12 @@ class AgencyCards extends React.Component {
     super(props);
       console.log(props.list);
     this.state = {
-      cards: props.list
+      cards: props.list,
+      matchMoment: props.matchMoment
     };
+
+    console.log('foo', this.state.matchMoment);
+
   }
   handleYup(card) {
     console.log(`Yup for ${card.name} ${card.volunteer_type}`)

@@ -5,11 +5,6 @@ import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
-// import { Slider } from 'react-native-elements'
-// import Slider from "react-native-slider";
-// import NMRangeSliderIOS from 'react-native-nmrangeslider-ios';
-
-
 
 class UserForm extends Component {
   state = { name: '', age_minimum: '', volunteer_type: '', zip: '', parent_email: '' };

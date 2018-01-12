@@ -10,12 +10,12 @@ class AgencyList extends Component {
   constructor(props) {
     super(props);
     this.state  = {
-      agencies: props.agencies
+      agencies: props.agencies,
+      matchMoment: props.matchMoment
     }
-  }  // state = { agencies: [] }; // step 1: initial state default created (empty list of agencies)
+    console.log('bar', this.state.matchMoment);
 
-  // must have render method that returns some  amount of JSX (to make class based component)
-  // lifecyle methods that automatically get called
+  }
   componentWillReceiveProps() {
     this.setState({ agencies: this.props.agencies })
   };
@@ -35,7 +35,7 @@ class AgencyList extends Component {
 
   render() {
 
-    console.log(this.state); 
+    console.log(this.state);
 
     return (
       <View>
@@ -45,7 +45,8 @@ class AgencyList extends Component {
           Find More Opportunities!
           </Button>
 
-          <AgencyCards list={ this.state.agencies }/>
+          <AgencyCards             matchMoment={this.state.matchMoment}
+          list={ this.state.agencies }/>
 
         </ScrollView>
       </View>

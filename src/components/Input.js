@@ -17,7 +17,6 @@ const { inputStyle, labelStyle, containerStyle } = styles;
     </View>
   );
 };
-// style={{ height: 20, width: 100}} taken from textinput styling
 
 const styles = {
   inputStyle: {
@@ -34,8 +33,6 @@ const styles = {
     flex: 1
   },
   containerStyle: {
-    // height: 40,
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center'
   }
