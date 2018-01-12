@@ -17,9 +17,6 @@ class UserForm extends Component {
   onButtonPress() {
     const { name, age_minimum, volunteer_type, zip, parent_email } = this.state;
 
-    // this.props.onSearch(zip)
-    //this is the last thing that happens
-
     if (name == '' || age_minimum == '' || zip == '' || parent_email == '' || volunteer_type == '') {
       this.setState( {error: 'All fields required'});
     } else {

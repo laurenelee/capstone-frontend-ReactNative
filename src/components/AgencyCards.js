@@ -4,17 +4,15 @@ import SwipeCards from 'react-native-swipe-cards';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import IconButton from './IconButton';
+import MatchPage from './MatchPage';
 
-const SWIPE_THRESHOLD = 40;
+const SWIPE_THRESHOLD = 50;
 
 class Card extends React.Component {
   constructor(props) {
     super(props);
   }
-  // renderSwipedLeft() {
-  //   this.renderSwipedLeft = renderNope()
-  // }
-// props data is the WHOLE list of data from agency detail
+
   render() {
     return (
       <IndividualCard>
@@ -37,12 +35,12 @@ class Card extends React.Component {
 
         <CardSection>
           <View style={styles.icons}>
-            <IconButton renderSwipedLeft={this.renderenderSwipedLeft}>
-            No thanks
+            <IconButton onPress={this.handleNope}>
+             <Image source={require("../../x.png")}/>
             </IconButton>
 
             <IconButton onPress={() => Linking.openURL(this.props.url)}>
-            Volunteer Here!
+            <Image source={require("../../heart.png")}/>
             </IconButton>
           </View>
         </CardSection>
@@ -77,33 +75,34 @@ class AgencyCards extends React.Component {
       cards: props.list
     };
   }
-
   handleYup(card) {
-    console.log(`Yup for ${card.name}`)
+    console.log(`Yup for ${card.name} ${card.volunteer_type}`)
+    console.log(card)
+    // this.setState({pageToshow: MatchPage})
+    this.props.matchMoment(card)
   }
   handleNope(card) {
     console.log(`Nope for ${card.name}`)
   }
-  handleMaybe(card) {
-    console.log(`Maybe for ${card.name}`)
-  }
+  // handleMaybe(card) {
+  //   console.log(`Maybe for ${card.name}`)
+  // }
   render() {
-    // cards is agency list
-    // cardData is agency detail
     return (
       <SwipeCards style={{flex:1}}
         cards={this.state.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
 
-        handleYup={this.handleYup}
+        handleYup={this.handleYup.bind(this)}
         handleNope={this.handleNope}
-        handleMaybe={this.handleMaybe}
-        hasMaybeAction
+        // handleMaybe={this.handleMaybe}
+        // hasMaybeAction
       />
     )
   }
 }
+
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = StyleSheet.create({
@@ -129,7 +128,11 @@ const styles = StyleSheet.create({
   },
   icons: {
     flexDirection: 'row',
-    paddingTop: 10
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 10,
+    width: 50,
+    height: 50,
   }
 })
 

@@ -16,7 +16,7 @@ const IconButton = ({ onPress, children }) => {
 const styles = {
   textStyle: {
     alignSelf: 'center',
-    color: '#007aff',
+    // color: '#007aff',
     fontSize: 16,
     fontWeight: '600',
     paddingTop: 10,
@@ -30,8 +30,8 @@ const styles = {
     marginLeft: 3,
     width: 100,
     height: 60,
-    borderWidth: 1,
-    borderColor: '#007aff'
+    // borderWidth: 1,
+    // borderColor: '#007aff'
   }
 };
 

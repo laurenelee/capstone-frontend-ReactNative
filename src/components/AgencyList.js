@@ -20,21 +20,14 @@ class AgencyList extends Component {
     this.setState({ agencies: this.props.agencies })
   };
 
-  // componentWillMount() {
-  //   // console.log('component will mount in agency list');
-  //   axios.get('http://localhost:3000/agency_details')
-  //   .then(response => this.setState({ agencies: response.data })); // step 2: updating component state and rerendering with new data (never do this.state = something for modification)
+  // renderAgencies() {
+  //   if (this.state.agencies.length == 0)
+  //     {return <Text>'no agencies'</Text>}
+  //   else
+  //     {return this.state.agencies.map(agency =>
+  //       <AgencyDetail key={agency.id} agency={agency} />
+  //   );}
   // }
-
-  // helper method to create list
-  renderAgencies() {
-    if (this.state.agencies.length == 0)
-      {return <Text>'no agencies'</Text>}
-    else
-      {return this.state.agencies.map(agency =>
-        <AgencyDetail key={agency.id} agency={agency} />
-    );}
-  }
 
   onButtonPress() {
     this.props.returnToForm()
@@ -42,8 +35,7 @@ class AgencyList extends Component {
 
   render() {
 
-    console.log(this.state); // rendering twice (once empty and then full)
-    // now time to build a list of components! transform for each agency a component
+    console.log(this.state); 
 
     return (
       <View>
