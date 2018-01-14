@@ -7,7 +7,6 @@ import MatchPage from './MatchPage';
 class Wrapper extends Component {
   constructor(props) {
     super(props);
-
     this.state  = {
       agencies: [],
       pageToshow: UserForm
@@ -15,11 +14,17 @@ class Wrapper extends Component {
     this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
+    this.returnToCards = this.returnToCards.bind(this);
   }
 
   returnToForm() {
     this.setState({
       pageToshow: UserForm
+    })
+  }
+  returnToCards() {
+    this.setState({
+      pageToshow: AgencyList //AgencyCards?
     })
   }
 
@@ -49,8 +54,19 @@ class Wrapper extends Component {
   render() {
     return (
       <View>
+
         {this.state.pageToshow == UserForm && (
           <UserForm onSearch={this.onSearch}/> ) }
+
+        {this.state.pageToshow == MatchPage && (
+            <View>
+              <MatchPage card={this.state.card}
+              agencies={this.state.agencies}
+              returnToCards={this.returnToCards}
+              matchMoment={this.matchMoment}/>
+            </View>
+        )}
+
         {this.state.pageToshow == AgencyList && (
           <View>
             <AgencyList agencies={this.state.agencies}
@@ -58,12 +74,7 @@ class Wrapper extends Component {
             returnToForm={this.returnToForm}/>
           </View>
         )}
-        {this.state.pageToshow == MatchPage && (
-          <View>
-            <MatchPage card={this.state.card}
-            matchMoment={this.matchMoment}/>
-          </View>
-        )}
+
       </View>
     )
   }

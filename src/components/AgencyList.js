@@ -10,11 +10,12 @@ class AgencyList extends Component {
   constructor(props) {
     super(props);
     this.state  = {
+      pageToshow: AgencyList,
       agencies: props.agencies,
       matchMoment: props.matchMoment
     }
+    this.returnToCards = this.returnToCards.bind(this);
     console.log('bar', this.state.matchMoment);
-
   }
   componentWillReceiveProps() {
     this.setState({ agencies: this.props.agencies })
@@ -32,6 +33,11 @@ class AgencyList extends Component {
   onButtonPress() {
     this.props.returnToForm()
   }
+  returnToCards() {
+    this.setState({
+      pageToshow: AgencyList //AgencyCards?
+    })
+  }
 
   render() {
 
@@ -45,7 +51,9 @@ class AgencyList extends Component {
           Find More Opportunities!
           </Button>
 
-          <AgencyCards             matchMoment={this.state.matchMoment}
+          <AgencyCards
+          returnToCards={this.returnToCards}
+          matchMoment={this.state.matchMoment}
           list={ this.state.agencies }/>
 
         </ScrollView>

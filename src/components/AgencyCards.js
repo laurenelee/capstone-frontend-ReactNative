@@ -77,7 +77,14 @@ class AgencyCards extends React.Component {
       cards: props.list,
       matchMoment: props.matchMoment
     }
+    // this.returnToCards = this.returnToCards.bind(this);
+
   }
+  // returnToCards() {
+  //   this.setState({
+  //     pageToshow: AgencyCards
+  //   })
+  // }
 
   handleYup(card) {
     // console.log(`Yup for ${card.name} ${card.volunteer_type}`)
@@ -96,6 +103,7 @@ class AgencyCards extends React.Component {
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
 
+        // returnToCards={this.returnToCards}
         handleYup={this.handleYup.bind(this)}
         handleNope={this.handleNope}
         // handleMaybe={this.handleMaybe}
