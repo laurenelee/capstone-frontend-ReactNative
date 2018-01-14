@@ -4,7 +4,6 @@ import AgencyCards from './AgencyCards';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import MatchButton from './MatchButton';
-// import Button from './Button';
 import AgencyList from './AgencyList';
 
 class MatchPage extends Component {
@@ -17,21 +16,11 @@ class MatchPage extends Component {
     console.log('foo', this.props);
   }
   onButtonPress() {
-    // console.log('in return to cards', this.state);
-    // this.setState({
-    //   pageToshow: AgencyList //AgencyCards?
-    // })
-    // console.log('after set state function', this.state);
     this.props.returnToCards()
-
   }
-  componentWillReceiveProps() {
-    this.setState({ card: this.props.card})
-  };
 
   render() {
     const { matchCard, textStyle } = styles;
-    // const {goBack} = this.props.navigation;
 
     return (
         <View>
@@ -47,7 +36,6 @@ class MatchPage extends Component {
 
           <View style={{flexDirection: 'row'}}>
             <MatchButton
-            // returnToCards={this.returnToCards}
             onPress={this.onButtonPress.bind(this)}> Back to volunteer opportunities!
             </MatchButton>
 

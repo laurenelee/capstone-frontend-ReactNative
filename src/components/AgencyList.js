@@ -21,15 +21,6 @@ class AgencyList extends Component {
     this.setState({ agencies: this.props.agencies })
   };
 
-  // renderAgencies() {
-  //   if (this.state.agencies.length == 0)
-  //     {return <Text>'no agencies'</Text>}
-  //   else
-  //     {return this.state.agencies.map(agency =>
-  //       <AgencyDetail key={agency.id} agency={agency} />
-  //   );}
-  // }
-
   onButtonPress() {
     this.props.returnToForm()
   }
