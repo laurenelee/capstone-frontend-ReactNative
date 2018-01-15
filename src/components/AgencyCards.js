@@ -11,8 +11,29 @@ const SWIPE_THRESHOLD = 50;
 class Card extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      card: props.card,
+      cards: props.list,
+      matchMoment: props.matchMoment
+    }
+    this.handleYup = this.handleYup.bind(this);
+    this.handleNope = this.handleNope.bind(this);
+    this.matchMoment = this.matchMoment.bind(this);
   }
-
+  matchMoment(card) {
+    this.state.card = card
+    this.setState({
+      pageToshow: MatchPage
+    })
+  }
+  handleYup(card) {
+    console.log(card, `Yes for ${card.name}`)
+    this.matchMoment(card)
+    // this.props.matchMoment(card)
+  }
+  handleNope(card) {
+    console.log(card, `Nope for ${card.name}`)
+  }
   render() {
     return (
       <IndividualCard>
@@ -35,19 +56,21 @@ class Card extends React.Component {
 
         <CardSection>
           <View style={styles.icons}>
-            <IconButton onPress={this.handleNope}>
+            <IconButton handleNope={this.state.handleNope} onPress={this.handleNope.bind(this)}>
              <Image
              style={{width: 50, height: 50}} source={require("../../x.png")}/>
             </IconButton>
 
-            <IconButton onPress={() => Linking.openURL(this.props.url)}>
-            <Image
-            style={{width: 50, height: 50}} source={require("../../heart.png")}/>
+            <IconButton handleYup={this.state.handleYup}
+            matchMoment={this.state.matchMoment} onPress={this.handleYup.bind(this)}>
+              <Image
+              style={{width: 50, height: 50}} source={require("../../heart.png")}/>
             </IconButton>
           </View>
         </CardSection>
 
       </IndividualCard>
+
     )
   }
 }
@@ -77,28 +100,33 @@ class AgencyCards extends React.Component {
       cards: props.list,
       matchMoment: props.matchMoment
     }
+    this.handleYup = this.handleYup.bind(this);
+    this.handleNope = this.handleNope.bind(this);
+    this.matchMoment = this.matchMoment.bind(this);
   }
-
   handleYup(card) {
+    console.log(`Yes for ${card.name}`)
     this.props.matchMoment(card)
   }
   handleNope(card) {
     console.log(`Nope for ${card.name}`)
   }
-  // handleMaybe(card) {
-  //   console.log(`Maybe for ${card.name}`)
-  // }
+  matchMoment(card) {
+    this.state.card = card
+    this.setState({
+      pageToshow: MatchPage
+    })
+  }
+
   render() {
     return (
       <SwipeCards style={{flex:1}}
         cards={this.state.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
-
+        matchMoment={this.state.matchMoment}
         handleYup={this.handleYup.bind(this)}
-        handleNope={this.handleNope}
-        // handleMaybe={this.handleMaybe}
-        // hasMaybeAction
+        handleNope={this.handleNope.bind(this)}
       />
     )
   }

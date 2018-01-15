@@ -9,14 +9,16 @@ class Wrapper extends Component {
     super(props);
     this.state  = {
       agencies: [],
-      pageToshow: UserForm
+      pageToshow: UserForm,
+      card: props.card
     }
     this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
     this.returnToCards = this.returnToCards.bind(this);
+    this.handleYup = this.handleYup.bind(this);
+    this.handleNope = this.handleNope.bind(this);
   }
-
   returnToForm() {
     this.setState({
       pageToshow: UserForm
@@ -27,7 +29,6 @@ class Wrapper extends Component {
       pageToshow: AgencyList
     })
   }
-
   onSearch(volunteer_type, zip, age_minimum) {
     console.log('searching ');
     fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`)
@@ -41,14 +42,18 @@ class Wrapper extends Component {
       })
     })
   }
-
   matchMoment(card) {
     this.state.card = card
     this.setState({
       pageToshow: MatchPage
     })
-
-    console.log('checking that matchMoment is called');
+  }
+  handleYup(card) {
+    console.log(`Yes for ${card.name}`)
+    this.props.matchMoment(card)
+  }
+  handleNope(card) {
+    console.log(`Nope for ${card.name}`)
   }
 
   render() {
@@ -64,7 +69,10 @@ class Wrapper extends Component {
               agencies={this.state.agencies}
               returnToCards={this.returnToCards}
               matchMoment={this.matchMoment}
-              returnToForm={this.returnToForm}/>
+              returnToForm={this.returnToForm}
+              handleYup={this.handleYup}
+              handleNope={this.handleNope}
+              />
             </View>
         )}
 
@@ -72,6 +80,8 @@ class Wrapper extends Component {
           <View>
             <AgencyList agencies={this.state.agencies}
             matchMoment={this.matchMoment}
+            handleYup={this.handleYup}
+            handleNope={this.handleNope}
             returnToForm={this.returnToForm}/>
           </View>
         )}
