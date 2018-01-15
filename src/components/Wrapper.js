@@ -24,7 +24,7 @@ class Wrapper extends Component {
   }
   returnToCards() {
     this.setState({
-      pageToshow: AgencyList 
+      pageToshow: AgencyList
     })
   }
 
@@ -63,7 +63,8 @@ class Wrapper extends Component {
               <MatchPage card={this.state.card}
               agencies={this.state.agencies}
               returnToCards={this.returnToCards}
-              matchMoment={this.matchMoment}/>
+              matchMoment={this.matchMoment}
+              returnToForm={this.returnToForm}/>
             </View>
         )}
 

@@ -5,6 +5,7 @@ import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import MatchButton from './MatchButton';
 import AgencyList from './AgencyList';
+import Button from './Button';
 
 class MatchPage extends Component {
   constructor(props) {
@@ -17,6 +18,9 @@ class MatchPage extends Component {
   }
   onButtonPress() {
     this.props.returnToCards()
+  }
+  pressBackButton() {
+    this.props.returnToForm()
   }
 
   render() {
@@ -33,16 +37,23 @@ class MatchPage extends Component {
             </CardSection>
           </IndividualCard>
 
-
           <View style={{flexDirection: 'row'}}>
             <MatchButton
-            onPress={this.onButtonPress.bind(this)}> Back to volunteer opportunities!
+            onPress={this.onButtonPress.bind(this)}> Keep swiping!
             </MatchButton>
 
-            <MatchButton onPress={() => Linking.openURL(this.state.card.url)}>
-            Sign up Now!
+            <MatchButton
+            onPress={this.pressBackButton.bind(this)}>
+            New search
             </MatchButton>
           </View>
+
+          <View style={{paddingTop: 5}}>
+            <Button onPress={() => Linking.openURL(this.state.card.url)}>
+            Sign up Now!
+            </Button>
+          </View>
+
         </View>
     )
   }

@@ -43,6 +43,7 @@ class AgencyList extends Component {
           </Button>
 
           <AgencyCards
+          returnToForm={this.returnToForm}
           returnToCards={this.returnToCards}
           matchMoment={this.state.matchMoment}
           list={ this.state.agencies }/>
