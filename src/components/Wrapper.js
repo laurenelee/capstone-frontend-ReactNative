@@ -50,8 +50,8 @@ class Wrapper extends Component {
     })
   }
   handleYup(card) {
-    console.log(`Yes for ${card.name}`)
-    this.props.matchMoment(card)
+    console.log(`Wrapper file Yes for ${card.name}`)
+    this.matchMoment(card)
   }
   handleNope(card) {
     console.log(`Wrapper file Nope for ${card.name}`)
@@ -76,7 +76,6 @@ class Wrapper extends Component {
               matchMoment={this.matchMoment}
               returnToForm={this.returnToForm}
               handleYup={this.handleYup}
-              // handleNope={this.handleNope}
               />
             </View>
         )}

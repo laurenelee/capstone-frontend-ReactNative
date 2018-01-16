@@ -19,7 +19,6 @@ const styles = {
     alignItems: 'center', // this finally centered the image! 1/5/18
     borderColor: '#ddd',
     position: 'relative',
-    // height: 'relative'
   }
 };
 

@@ -16,8 +16,7 @@ class AgencyList extends Component {
       card: props.card
     }
     this.returnToCards = this.returnToCards.bind(this);
-    this.handleYup = this.handleYup.bind(this);
-    // this.handleNope = this.props.handleNope.bind(this);
+    // this.handleYup = this.handleYup.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
   }
   componentWillReceiveProps() {
@@ -31,12 +30,9 @@ class AgencyList extends Component {
       pageToshow: AgencyList
     })
   }
-  handleYup(card) {
-    console.log(`Yes for ${card.name}`)
-    this.props.matchMoment(card)
-  }
-  // handleNope(card) {
-  //   console.log(`Nope for ${card.name}`)
+  // handleYup(card) {
+  //   console.log(`Yes for ${card.name}`)
+  //   this.props.matchMoment(card)
   // }
   matchMoment(card) {
     this.state.card = card

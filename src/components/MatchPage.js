@@ -23,10 +23,6 @@ class MatchPage extends Component {
   pressBackButton() {
     this.props.returnToForm()
   }
-  // <Image
-  // style={{height: 250, height: 270}}
-  // source= {require("../../sparkler.jpeg")}
-  // />
 
   render() {
     const { matchCard, textStyle, bottomButton } = styles;
