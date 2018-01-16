@@ -24,7 +24,7 @@ class MatchPage extends Component {
   }
 
   render() {
-    const { matchCard, textStyle } = styles;
+    const { matchCard, textStyle, bottomButton } = styles;
 
     return (
         <View>
@@ -48,7 +48,7 @@ class MatchPage extends Component {
             </MatchButton>
           </View>
 
-          <View style={{paddingTop: 5}}>
+          <View style={{paddingTop: 5}} >
             <Button onPress={() => Linking.openURL(this.state.card.url)}>
             Sign up Now!
             </Button>
@@ -69,6 +69,12 @@ const styles = {
     fontSize: 50,
     fontWeight: '800',
     color: '#007aff',
+  },
+  bottomButton: {
+    // paddingTop: 5,
+    color: '#030907',
+    height: 100,
+    fontSize: 50
   }
 };
 

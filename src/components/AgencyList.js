@@ -49,10 +49,10 @@ class AgencyList extends Component {
 
     return (
       <View>
-        <ScrollView>
+        <ScrollView style={{paddingTop: 5}}>
 
           <Button onPress={this.onButtonPress.bind(this)}>
-          Find More Opportunities!
+          New Search
           </Button>
 
           <AgencyCards
