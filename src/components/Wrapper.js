@@ -21,11 +21,13 @@ class Wrapper extends Component {
     this.handleNope = this.handleNope.bind(this);
   }
   returnToForm() {
+    console.log(`wrapper file returntoform function`)
     this.setState({
       pageToshow: UserForm
     })
   }
   returnToCards() {
+    console.log(`wrapper file returnToCards function`)
     this.setState({
       pageToshow: AgencyList
     })
@@ -48,6 +50,7 @@ class Wrapper extends Component {
     this.setState({
       pageToshow: MatchPage
     })
+    console.log(`Matchmoment  for ${card.name}`)
   }
   handleYup(card) {
     console.log(`Wrapper file Yes for ${card.name}`)
@@ -55,6 +58,9 @@ class Wrapper extends Component {
   }
   handleNope(card) {
     console.log(`Wrapper file Nope for ${card.name}`)
+  }
+  handleMaybe(card) {
+    console.log(`Wrapper file Maybe for ${card.name}`)
   }
 
   render() {
@@ -76,6 +82,7 @@ class Wrapper extends Component {
               matchMoment={this.matchMoment}
               returnToForm={this.returnToForm}
               handleYup={this.handleYup}
+              handleMaybe={this.handleMaybe}
               />
             </View>
         )}
@@ -86,6 +93,7 @@ class Wrapper extends Component {
             matchMoment={this.matchMoment}
             handleYup={this.handleYup}
             handleNope={this.handleNope}
+            handleMaybe={this.handleMaybe}
             returnToForm={this.returnToForm}/>
           </View>
         )}

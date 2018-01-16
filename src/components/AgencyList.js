@@ -12,12 +12,12 @@ class AgencyList extends Component {
     this.state  = {
       pageToshow: AgencyList,
       agencies: props.agencies,
-      matchMoment: props.matchMoment,
+      // matchMoment: props.matchMoment,
       card: props.card
     }
-    this.returnToCards = this.returnToCards.bind(this);
+    // this.returnToCards = this.returnToCards.bind(this);
     // this.handleYup = this.handleYup.bind(this);
-    this.matchMoment = this.matchMoment.bind(this);
+    // this.matchMoment = this.matchMoment.bind(this);
   }
   componentWillReceiveProps() {
     this.setState({ agencies: this.props.agencies })
@@ -25,21 +25,21 @@ class AgencyList extends Component {
   onButtonPress() {
     this.props.returnToForm()
   }
-  returnToCards() {
-    this.setState({
-      pageToshow: AgencyList
-    })
-  }
+  // returnToCards() {
+  //   this.setState({
+  //     pageToshow: AgencyList
+  //   })
+  // }
   // handleYup(card) {
   //   console.log(`Yes for ${card.name}`)
   //   this.props.matchMoment(card)
   // }
-  matchMoment(card) {
-    this.state.card = card
-    this.setState({
-      pageToshow: MatchPage
-    })
-  }
+  // matchMoment(card) {
+  //   this.state.card = card
+  //   this.setState({
+  //     pageToshow: MatchPage
+  //   })
+  // }
   render() {
 
     console.log(this.state);
@@ -53,11 +53,12 @@ class AgencyList extends Component {
             </Button>
           <View style={{height: 450}}>
             <AgencyCards
-            returnToForm={this.returnToForm}
-            returnToCards={this.returnToCards}
-            matchMoment={this.state.matchMoment}
+            returnToForm={this.props.returnToForm}
+            returnToCards={this.props.returnToCards}
+            matchMoment={this.props.matchMoment}
             handleNope={this.props.handleNope}
             handleYup={this.props.handleYup}
+            handleMaybe={this.props.handleMaybe}
             list={this.state.agencies}/>
           </View>
         </View>

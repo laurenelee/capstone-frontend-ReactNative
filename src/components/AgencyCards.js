@@ -14,21 +14,15 @@ class Card extends React.Component {
     this.state = {
       card: props.card,
       cards: props.list,
-      matchMoment: props.matchMoment
+      // matchMoment: props.matchMoment
     }
-    // this.handleYup = this.handleYup.bind(this);
-    this.matchMoment = this.matchMoment.bind(this);
+    // this.matchMoment = this.matchMoment.bind(this);
   }
-  matchMoment(card) {
-    this.state.card = card
-    this.setState({
-      pageToshow: MatchPage
-    })
-  }
-  // handleYup(card) {
-  //   console.log(card, `Card Yes for ${card.name}`)
-  //   this.matchMoment(card)
-  //   // this.props.matchMoment(card)
+  // matchMoment(card) {
+  //   this.state.card = card
+  //   this.setState({
+  //     pageToshow: MatchPage
+  //   })
   // }
   render() {
     return (
@@ -77,25 +71,16 @@ class AgencyCards extends React.Component {
       console.log(props.list);
     this.state = {
       cards: props.list,
-      matchMoment: props.matchMoment
+      // matchMoment: props.matchMoment
     }
-    // this.handleYup = this.handleYup.bind(this);
-    this.matchMoment = this.matchMoment.bind(this);
-    this.handleMaybe = this.handleMaybe.bind(this);
+    // this.matchMoment = this.matchMoment.bind(this);
   }
-  // handleYup(card) {
-  //   console.log(`AgencyCards Yes for ${card.name}`)
-  //   this.props.matchMoment(card)
+  // matchMoment(card) {
+  //   this.state.card = card
+  //   this.setState({
+  //     pageToshow: MatchPage
+  //   })
   // }
-  handleMaybe (card) {
-    console.log(`agencycards Maybe for ${card.name}`)
-  }
-  matchMoment(card) {
-    this.state.card = card
-    this.setState({
-      pageToshow: MatchPage
-    })
-  }
 
   render() {
 
@@ -105,10 +90,10 @@ class AgencyCards extends React.Component {
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
         smoothTransition={true}
-        matchMoment={this.state.matchMoment}
+        matchMoment={this.props.matchMoment}
         handleYup={this.props.handleYup}
         handleNope={this.props.handleNope}
-        handleMaybe={this.handleMaybe.bind(this)}
+        handleMaybe={this.props.handleMaybe}
         hasMaybeAction={true}
       />
 
