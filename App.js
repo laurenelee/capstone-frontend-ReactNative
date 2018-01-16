@@ -12,7 +12,7 @@ import Wrapper from './src/components/Wrapper';
 
 const App = () => (
   <View>
-  <Header headerText={'Volunteer Agency'} />
+  
   <Wrapper />
   </View>
 

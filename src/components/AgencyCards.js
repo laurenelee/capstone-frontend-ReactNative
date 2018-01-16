@@ -53,7 +53,6 @@ class Card extends React.Component {
             <Text><B>Age Minimum: </B>{this.props.age_minimum}</Text>
           </View>
         </CardSection>
-
         <CardSection>
           <View style={styles.icons}>
             <IconButton handleNope={this.state.handleNope} onPress={this.handleNope.bind(this)}>
@@ -70,7 +69,6 @@ class Card extends React.Component {
         </CardSection>
 
       </IndividualCard>
-
     )
   }
 }
@@ -103,6 +101,7 @@ class AgencyCards extends React.Component {
     this.handleYup = this.handleYup.bind(this);
     this.handleNope = this.handleNope.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
+    this.handleMaybe = this.handleMaybe.bind(this);
   }
   handleYup(card) {
     console.log(`Yes for ${card.name}`)
@@ -110,6 +109,9 @@ class AgencyCards extends React.Component {
   }
   handleNope(card) {
     console.log(`Nope for ${card.name}`)
+  }
+  handleMaybe (card) {
+    console.log(`Maybe for ${card.name}`)
   }
   matchMoment(card) {
     this.state.card = card
@@ -119,15 +121,20 @@ class AgencyCards extends React.Component {
   }
 
   render() {
+
     return (
       <SwipeCards style={{flex:1}}
         cards={this.state.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
+        smoothTransition={true}
         matchMoment={this.state.matchMoment}
         handleYup={this.handleYup.bind(this)}
         handleNope={this.handleNope.bind(this)}
+        handleMaybe={this.handleMaybe.bind(this)}
+        hasMaybeAction={true}
       />
+
     )
   }
 }

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import AgencyList from './AgencyList';
 import UserForm from './UserForm';
 import MatchPage from './MatchPage';
+import Header from './header';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -61,7 +62,11 @@ class Wrapper extends Component {
       <View>
 
         {this.state.pageToshow == UserForm && (
-          <UserForm onSearch={this.onSearch}/> ) }
+          <View>
+          <Header headerText={'Find Opportunities'} />
+          <UserForm onSearch={this.onSearch}/>
+          </View>
+        )}
 
         {this.state.pageToshow == MatchPage && (
             <View>

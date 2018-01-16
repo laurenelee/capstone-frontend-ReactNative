@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View } from 'react-native';
 import axios from 'axios';
 import AgencyDetail from './AgencyDetail';
 import Button from './Button';
 import AgencyCards from './AgencyCards';
+import Header from './header';
 
 class AgencyList extends Component {
   constructor(props) {
@@ -49,12 +50,11 @@ class AgencyList extends Component {
 
     return (
       <View>
-        <ScrollView style={{paddingTop: 5}}>
-
-          <Button onPress={this.onButtonPress.bind(this)}>
-          New Search
-          </Button>
-
+      <Header headerText={'Swipe Opportunities'} />
+      <Button onPress={this.onButtonPress.bind(this)}>
+      New Search
+      </Button>
+        <View style={{height: 300, paddingTop: 110}}>
           <AgencyCards
           returnToForm={this.returnToForm}
           returnToCards={this.returnToCards}
@@ -63,7 +63,7 @@ class AgencyList extends Component {
           handleYup={this.state.handleYup}
           list={this.state.agencies}/>
 
-        </ScrollView>
+        </View>
       </View>
     );
   }

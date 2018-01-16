@@ -1,11 +1,12 @@
 import React, { Component }  from 'react';
-import { Text, View, Linking } from 'react-native';
+import { Text, View, Linking, Image } from 'react-native';
 import AgencyCards from './AgencyCards';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import MatchButton from './MatchButton';
 import AgencyList from './AgencyList';
 import Button from './Button';
+import Header from './header';
 
 class MatchPage extends Component {
   constructor(props) {
@@ -22,13 +23,17 @@ class MatchPage extends Component {
   pressBackButton() {
     this.props.returnToForm()
   }
+  // <Image
+  // style={{height: 250, height: 270}}
+  // source= {require("../../sparkler.jpeg")}
+  // />
 
   render() {
     const { matchCard, textStyle, bottomButton } = styles;
 
     return (
         <View>
-
+        <Header headerText={'Your Match'} />
           <IndividualCard>
             <CardSection>
               <View style={matchCard}>

@@ -60,6 +60,7 @@ class UserForm extends Component {
     const { dropdownStyle, container, errorTextStyle } = styles;
 
     return (
+    
       <IndividualCard>
 
       <CardSection>
