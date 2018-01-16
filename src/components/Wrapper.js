@@ -50,7 +50,7 @@ class Wrapper extends Component {
     this.setState({
       pageToshow: MatchPage
     })
-    console.log(`Matchmoment  for ${card.name}`)
+    console.log(`wrapper file Matchmoment  for ${card.name}`)
   }
   handleYup(card) {
     console.log(`Wrapper file Yes for ${card.name}`)
@@ -74,6 +74,17 @@ class Wrapper extends Component {
           </View>
         )}
 
+        {this.state.pageToshow == AgencyList && (
+          <View>
+            <AgencyList agencies={this.state.agencies}
+            matchMoment={this.matchMoment}
+            handleYup={this.handleYup}
+            handleNope={this.handleNope}
+            handleMaybe={this.handleMaybe}
+            returnToForm={this.returnToForm}/>
+          </View>
+        )}
+
         {this.state.pageToshow == MatchPage && (
             <View>
               <MatchPage card={this.state.card}
@@ -85,17 +96,6 @@ class Wrapper extends Component {
               handleMaybe={this.handleMaybe}
               />
             </View>
-        )}
-
-        {this.state.pageToshow == AgencyList && (
-          <View>
-            <AgencyList agencies={this.state.agencies}
-            matchMoment={this.matchMoment}
-            handleYup={this.handleYup}
-            handleNope={this.handleNope}
-            handleMaybe={this.handleMaybe}
-            returnToForm={this.returnToForm}/>
-          </View>
         )}
 
       </View>
