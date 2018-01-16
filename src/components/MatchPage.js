@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Text, View, Linking, Image } from 'react-native';
+import { Text, View, Linking, Image, ImageBackground } from 'react-native';
 import AgencyCards from './AgencyCards';
 import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
@@ -36,9 +36,11 @@ class MatchPage extends Component {
         <Header headerText={'Your Match'} />
           <IndividualCard>
             <CardSection>
-              <View style={matchCard}>
-                <Text style={textStyle}>You matched with {this.state.card.name}!</Text>
-              </View>
+              <ImageBackground style={{width: 320, height: 350}} source={require("../../sparkler.jpeg")}>
+                <View style={matchCard}>
+                  <Text style={textStyle}>You matched with {this.state.card.name}!</Text>
+                </View>
+              </ImageBackground>
             </CardSection>
           </IndividualCard>
 
@@ -68,12 +70,14 @@ const styles = {
   matchCard: {
     height: 300,
     paddingTop: 50,
+
   },
   textStyle: {
     textAlign: 'center',
     fontSize: 50,
     fontWeight: '800',
-    color: '#007aff',
+    color: '#fbfcfe',
+    backgroundColor: 'transparent',
   },
   bottomButton: {
     // paddingTop: 5,

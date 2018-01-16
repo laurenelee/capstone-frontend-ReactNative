@@ -54,7 +54,7 @@ class Wrapper extends Component {
     this.props.matchMoment(card)
   }
   handleNope(card) {
-    console.log(`Nope for ${card.name}`)
+    console.log(`Wrapper file Nope for ${card.name}`)
   }
 
   render() {
@@ -76,7 +76,7 @@ class Wrapper extends Component {
               matchMoment={this.matchMoment}
               returnToForm={this.returnToForm}
               handleYup={this.handleYup}
-              handleNope={this.handleNope}
+              // handleNope={this.handleNope}
               />
             </View>
         )}

@@ -12,7 +12,7 @@ class UserForm extends Component {
   onButtonPress() {
     const { name, age_minimum, volunteer_type, zip, parent_email } = this.state;
 
-    if (name == '' || age_minimum == '' || zip == '' || parent_email == '' || volunteer_type == '') {
+    if (name == '' || age_minimum == '' || zip == '' || volunteer_type == '') {
       this.setState( {error: 'All fields required'});
     } else {
         this.props.onSearch(volunteer_type, zip, age_minimum)
@@ -60,7 +60,7 @@ class UserForm extends Component {
     const { dropdownStyle, container, errorTextStyle } = styles;
 
     return (
-    
+
       <IndividualCard>
 
       <CardSection>
@@ -90,14 +90,7 @@ class UserForm extends Component {
       />
       </CardSection>
 
-      <CardSection>
-      <Input
-      placeholder="mom@email.com"
-      label="Parent Email:"
-      value={this.state.parent_email}
-      onChangeText={parent_email => this.setState({ parent_email })}
-      />
-      </CardSection>
+
 
       <Dropdown
       style={dropdownStyle}

@@ -18,7 +18,8 @@ const styles = {
     flexDirection: 'column', // was row
     alignItems: 'center', // this finally centered the image! 1/5/18
     borderColor: '#ddd',
-    position: 'relative'
+    position: 'relative',
+    // height: 'relative'
   }
 };
 

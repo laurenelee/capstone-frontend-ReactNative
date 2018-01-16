@@ -16,8 +16,8 @@ class Card extends React.Component {
       cards: props.list,
       matchMoment: props.matchMoment
     }
-    this.handleYup = this.handleYup.bind(this);
-    this.handleNope = this.handleNope.bind(this);
+    // this.handleYup = this.handleYup.bind(this);
+    // this.handleNope = this.handleNope.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
   }
   matchMoment(card) {
@@ -27,17 +27,17 @@ class Card extends React.Component {
     })
   }
   handleYup(card) {
-    console.log(card, `Yes for ${card.name}`)
+    console.log(card, `Card Yes for ${card.name}`)
     this.matchMoment(card)
     // this.props.matchMoment(card)
   }
-  handleNope(card) {
-    console.log(card, `Nope for ${card.name}`)
-  }
+  // handleNope(card) {
+  //   console.log(card, `Card Nope for ${card.name}`)
+  // }
   render() {
     return (
       <IndividualCard>
-        <CardSection>
+        <CardSection >
           <View>
             <Image
             style={styles.imageStyle}
@@ -53,20 +53,7 @@ class Card extends React.Component {
             <Text><B>Age Minimum: </B>{this.props.age_minimum}</Text>
           </View>
         </CardSection>
-        <CardSection>
-          <View style={styles.icons}>
-            <IconButton handleNope={this.state.handleNope} onPress={this.handleNope.bind(this)}>
-             <Image
-             style={{width: 50, height: 50}} source={require("../../x.png")}/>
-            </IconButton>
 
-            <IconButton handleYup={this.state.handleYup}
-            matchMoment={this.state.matchMoment} onPress={this.handleYup.bind(this)}>
-              <Image
-              style={{width: 50, height: 50}} source={require("../../heart.png")}/>
-            </IconButton>
-          </View>
-        </CardSection>
 
       </IndividualCard>
     )
@@ -99,19 +86,19 @@ class AgencyCards extends React.Component {
       matchMoment: props.matchMoment
     }
     this.handleYup = this.handleYup.bind(this);
-    this.handleNope = this.handleNope.bind(this);
+    // this.handleNope = this.handleNope.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
     this.handleMaybe = this.handleMaybe.bind(this);
   }
   handleYup(card) {
-    console.log(`Yes for ${card.name}`)
+    console.log(`AgencyCards Yes for ${card.name}`)
     this.props.matchMoment(card)
   }
-  handleNope(card) {
-    console.log(`Nope for ${card.name}`)
-  }
+  // handleNope(card) {
+  //   console.log(`agencycards Nope for ${card.name}`)
+  // }
   handleMaybe (card) {
-    console.log(`Maybe for ${card.name}`)
+    console.log(`agencycards Maybe for ${card.name}`)
   }
   matchMoment(card) {
     this.state.card = card
@@ -130,7 +117,7 @@ class AgencyCards extends React.Component {
         smoothTransition={true}
         matchMoment={this.state.matchMoment}
         handleYup={this.handleYup.bind(this)}
-        handleNope={this.handleNope.bind(this)}
+        handleNope={this.props.handleNope}
         handleMaybe={this.handleMaybe.bind(this)}
         hasMaybeAction={true}
       />
