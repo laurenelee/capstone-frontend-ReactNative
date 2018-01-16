@@ -12,12 +12,8 @@ class AgencyList extends Component {
     this.state  = {
       pageToshow: AgencyList,
       agencies: props.agencies,
-      // matchMoment: props.matchMoment,
       card: props.card
     }
-    // this.returnToCards = this.returnToCards.bind(this);
-    // this.handleYup = this.handleYup.bind(this);
-    // this.matchMoment = this.matchMoment.bind(this);
   }
   componentWillReceiveProps() {
     this.setState({ agencies: this.props.agencies })
@@ -25,25 +21,9 @@ class AgencyList extends Component {
   onButtonPress() {
     this.props.returnToForm()
   }
-  // returnToCards() {
-  //   this.setState({
-  //     pageToshow: AgencyList
-  //   })
-  // }
-  // handleYup(card) {
-  //   console.log(`Yes for ${card.name}`)
-  //   this.props.matchMoment(card)
-  // }
-  // matchMoment(card) {
-  //   this.state.card = card
-  //   this.setState({
-  //     pageToshow: MatchPage
-  //   })
-  // }
+
   render() {
-
     console.log(this.state);
-
     return (
       <View>
         <Header headerText={'Swipe Opportunities'} />

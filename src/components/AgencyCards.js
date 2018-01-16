@@ -14,16 +14,9 @@ class Card extends React.Component {
     this.state = {
       card: props.card,
       cards: props.list,
-      // matchMoment: props.matchMoment
     }
-    // this.matchMoment = this.matchMoment.bind(this);
   }
-  // matchMoment(card) {
-  //   this.state.card = card
-  //   this.setState({
-  //     pageToshow: MatchPage
-  //   })
-  // }
+
   render() {
     return (
       <IndividualCard>
@@ -71,16 +64,8 @@ class AgencyCards extends React.Component {
       console.log(props.list);
     this.state = {
       cards: props.list,
-      // matchMoment: props.matchMoment
     }
-    // this.matchMoment = this.matchMoment.bind(this);
   }
-  // matchMoment(card) {
-  //   this.state.card = card
-  //   this.setState({
-  //     pageToshow: MatchPage
-  //   })
-  // }
 
   render() {
 
