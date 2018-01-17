@@ -28,7 +28,7 @@ class MatchList extends Component {
             <Text> Your Matches: </Text>
             <Text> {this.state.card.name} </Text>
             <Text> Your Maybes: </Text>
-            <Text> {this.state.card.name} </Text>
+            <Text> {this.state.maybeMatches} </Text>
         </CardSection>
 
         <CardSection>

@@ -44,7 +44,7 @@ class AgencyList extends Component {
             handleYup={this.props.handleYup}
             handleMaybe={this.props.handleMaybe}
             showMatchList={this.props.showMatchList}
-            maybeMatches={this.props.maybeMatches}
+            maybeMatches={this.state.maybeMatches}
             list={this.state.agencies}/>
           </View>
         </View>
