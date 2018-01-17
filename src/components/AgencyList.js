@@ -12,11 +12,15 @@ class AgencyList extends Component {
     this.state  = {
       pageToshow: AgencyList,
       agencies: props.agencies,
-      card: props.card
+      card: props.card,
+      maybeMatches: props.maybeMatches
     }
   }
   componentWillReceiveProps() {
-    this.setState({ agencies: this.props.agencies })
+    this.setState({
+      agencies: this.props.agencies,
+      maybeMatches: this.props.maybeMatches
+    })
   };
   onButtonPress() {
     this.props.returnToForm()
@@ -40,7 +44,7 @@ class AgencyList extends Component {
             handleYup={this.props.handleYup}
             handleMaybe={this.props.handleMaybe}
             showMatchList={this.props.showMatchList}
-
+            maybeMatches={this.props.maybeMatches}
             list={this.state.agencies}/>
           </View>
         </View>

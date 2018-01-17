@@ -47,9 +47,10 @@ class Wrapper extends Component {
       this.setState({
         agencies: json,
         pageToshow: AgencyList,
-        maybeMatches: [],
-        yesMatches: []
+        // maybeMatches: [],
+        // yesMatches: []
       })
+      console.log(this.state);
     })
   }
   matchMoment(card) {
@@ -68,10 +69,12 @@ class Wrapper extends Component {
   }
   handleMaybe(card) {
     console.log(card);
+    this.state.card = card
+    console.log(card);
     this.setState({
       maybeMatches: card
     })
-    console.log(`Wrapper file Maybe for ${card.name}`)
+    console.log(this.state, `Wrapper file Maybe for ${card.name}`)
   }
   showMatchList() {
     this.setState({
@@ -121,14 +124,16 @@ class Wrapper extends Component {
 
         {this.state.pageToshow == MatchList && (
             <View>
+              <Header headerText={'All of your Matches'} />
             <MatchList
             card={this.state.card}
-            // agencies={this.state.agencies}
+            agencies={this.state.agencies}
             returnToForm={this.returnToForm}
             returnToCards={this.returnToCards}
             handleMaybe={this.handleMaybe}
             handleYup={this.handleYup}
             showMatchList={this.showMatchList}
+            maybeMatches={this.maybeMatches}
             />
             </View>
         )}

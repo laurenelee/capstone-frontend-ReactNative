@@ -14,6 +14,7 @@ class Card extends React.Component {
     this.state = {
       card: props.card,
       cards: props.list,
+      maybeMatches: props.maybeMatches
     }
   }
 
@@ -64,6 +65,7 @@ class AgencyCards extends React.Component {
       console.log(props.list);
     this.state = {
       cards: props.list,
+      maybeMatches: props.maybeMatches
     }
   }
 
@@ -80,8 +82,10 @@ class AgencyCards extends React.Component {
         handleNope={this.props.handleNope}
         handleMaybe={this.props.handleMaybe}
         showMatchList={this.props.showMatchList}
-
         hasMaybeAction={true}
+
+        maybeMatches={this.props.maybeMatches}
+        
       />
 
     )

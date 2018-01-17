@@ -13,7 +13,9 @@ class MatchPage extends Component {
     super(props);
     this.state  = {
       pageToshow: MatchPage,
-      card: props.card
+      card: props.card,
+      cards: props.list,
+      maybeMatches: props.maybeMatches
     }
     console.log('foo', this.props);
   }
@@ -62,7 +64,7 @@ class MatchPage extends Component {
           </View>
 
           <View style={{paddingTop: 5}} >
-            <Button onPress={this.pressMatchListButton.bind(this)}>
+            <Button  onPress={this.pressMatchListButton.bind(this)}>
             See all matches
             </Button>
           </View>
