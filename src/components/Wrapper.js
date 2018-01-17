@@ -4,6 +4,7 @@ import AgencyList from './AgencyList';
 import UserForm from './UserForm';
 import MatchPage from './MatchPage';
 import Header from './header';
+import MatchList from './MatchList';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class Wrapper extends Component {
     this.state  = {
       agencies: [],
       pageToshow: UserForm,
-      card: props.card
+      card: props.card,
+      maybeMatches: [],
+      yesMatches: []
     }
     this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
@@ -19,6 +22,8 @@ class Wrapper extends Component {
     this.returnToCards = this.returnToCards.bind(this);
     this.handleYup = this.handleYup.bind(this);
     this.handleNope = this.handleNope.bind(this);
+    this.handleMaybe = this.handleMaybe.bind(this);
+    this.showMatchList = this.showMatchList.bind(this);
   }
   returnToForm() {
     console.log(`wrapper file returntoform function`)
@@ -41,7 +46,9 @@ class Wrapper extends Component {
       console.log(json);
       this.setState({
         agencies: json,
-        pageToshow: AgencyList
+        pageToshow: AgencyList,
+        maybeMatches: [],
+        yesMatches: []
       })
     })
   }
@@ -60,7 +67,16 @@ class Wrapper extends Component {
     console.log(`Wrapper file Nope for ${card.name}`)
   }
   handleMaybe(card) {
+    console.log(card);
+    this.setState({
+      maybeMatches: card
+    })
     console.log(`Wrapper file Maybe for ${card.name}`)
+  }
+  showMatchList() {
+    this.setState({
+      pageToshow: MatchList
+    })
   }
 
   render() {
@@ -76,25 +92,44 @@ class Wrapper extends Component {
 
         {this.state.pageToshow == AgencyList && (
           <View>
-            <AgencyList agencies={this.state.agencies}
+            <AgencyList
+            agencies={this.state.agencies}
             matchMoment={this.matchMoment}
             handleYup={this.handleYup}
             handleNope={this.handleNope}
             handleMaybe={this.handleMaybe}
+            showMatchList={this.showMatchList}
             returnToForm={this.returnToForm}/>
           </View>
         )}
 
         {this.state.pageToshow == MatchPage && (
             <View>
-              <MatchPage card={this.state.card}
+              <MatchPage
+              card={this.state.card}
               agencies={this.state.agencies}
               returnToCards={this.returnToCards}
               matchMoment={this.matchMoment}
               returnToForm={this.returnToForm}
               handleYup={this.handleYup}
               handleMaybe={this.handleMaybe}
+              showMatchList={this.showMatchList}
+
               />
+            </View>
+        )}
+
+        {this.state.pageToshow == MatchList && (
+            <View>
+            <MatchList
+            card={this.state.card}
+            // agencies={this.state.agencies}
+            returnToForm={this.returnToForm}
+            returnToCards={this.returnToCards}
+            handleMaybe={this.handleMaybe}
+            handleYup={this.handleYup}
+            showMatchList={this.showMatchList}
+            />
             </View>
         )}
 

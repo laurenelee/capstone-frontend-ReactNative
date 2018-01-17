@@ -39,6 +39,8 @@ class AgencyList extends Component {
             handleNope={this.props.handleNope}
             handleYup={this.props.handleYup}
             handleMaybe={this.props.handleMaybe}
+            showMatchList={this.props.showMatchList}
+
             list={this.state.agencies}/>
           </View>
         </View>

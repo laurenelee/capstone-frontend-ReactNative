@@ -79,6 +79,8 @@ class AgencyCards extends React.Component {
         handleYup={this.props.handleYup}
         handleNope={this.props.handleNope}
         handleMaybe={this.props.handleMaybe}
+        showMatchList={this.props.showMatchList}
+
         hasMaybeAction={true}
       />
 

@@ -23,7 +23,10 @@ class MatchPage extends Component {
   pressBackButton() {
     this.props.returnToForm()
   }
-
+  pressMatchListButton() {
+    console.log(this.props);
+    this.props.showMatchList()
+  }
   render() {
     const { matchCard, textStyle, bottomButton } = styles;
 
@@ -59,7 +62,7 @@ class MatchPage extends Component {
           </View>
 
           <View style={{paddingTop: 5}} >
-            <Button>
+            <Button onPress={this.pressMatchListButton.bind(this)}>
             See all matches
             </Button>
           </View>
