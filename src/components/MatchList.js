@@ -19,23 +19,32 @@ class MatchList extends Component {
   onButtonPress() {
     this.props.returnToCards()
   }
+  renderMaybes() {
+    console.log(this.state.maybeMatches);
+    this.state.maybeMatches.map(maybe =>
+      <CardSection key={maybe.name} maybe={maybe} />
+    )
+  }
+  // {this.renderMaybes()}
+// 
 
   render() {
     return (
       <IndividualCard>
+      <CardSection>
+       <View>
+        <Text>Your Matches: </Text>
+        <Text>{this.state.card.name} </Text>
+        <Text>Your Maybes: </Text>
+        <Text>{this.state.maybeMatches} </Text>
+       </View>
+      </CardSection>
 
-        <CardSection>
-            <Text> Your Matches: </Text>
-            <Text> {this.state.card.name} </Text>
-            <Text> Your Maybes: </Text>
-            <Text> {this.state.maybeMatches} </Text>
-        </CardSection>
-
-        <CardSection>
-          <Button
-          onPress={this.onButtonPress.bind(this)}> Keep swiping!
-          </Button>
-        </CardSection>
+      <CardSection>
+      <Button
+      onPress={this.onButtonPress.bind(this)}> Keep swiping!
+      </Button>
+      </CardSection>
 
       </IndividualCard>
     )
