@@ -11,6 +11,7 @@
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-native-elements": "^0.18.5",
+    "react-native-fontawesome": "^5.7.0",
     "react-native-material-dropdown": "^0.6.1",
     "react-native-modal-dropdown": "^0.5.0",
     "react-native-multi-slider": "^0.3.6",

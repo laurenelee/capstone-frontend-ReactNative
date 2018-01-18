@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Linking, TouchableWithoutFeedback } from 'react-native';
 import Header from './header';
 import Button from './Button';
 import IndividualCard from './IndividualCard';
@@ -19,11 +19,33 @@ class MatchList extends Component {
   onButtonPress() {
     this.props.returnToCards()
   }
+  // onMouseHover() {
+  //   style={{color: 'pink'}}
+  // }
   renderMaybes() {
-    return this.props.maybeMatches.map(maybe => <Text style={styles.listStyle}> {maybe.name} </Text>
+    return this.props.maybeMatches.map(maybe => <Text style={styles.listStyle}
+      // this.onMouseHover()
+      onPress={() => Linking.openURL(maybe.url)}
+      key={maybe.id}> {maybe.name} </Text>
     )
   }
+  // colorText: function() {
+  //   this.setState({textColored: true});
+  // },
+  // resetText: function() {
+  //   this.setState({textColored: false});
+  // },
+  // textColored: function() {
+  //   if(this.state.textColored) {
+  //     return styles.textColored;
+  //   } else {
+  //     return styles.textNormal;
+  //   }
+  // }
 
+  // <TouchableWithoutFeedback onPressIn={this.colorText}  onPressOut={this.resetText}>
+  // <Text style={[styles.textColored()]}>MyText</Text>
+  // </TouchableWithoutFeedback>
 
   render() {
     const { pageStyle, viewStyle, listStyle } = styles;
@@ -31,12 +53,12 @@ class MatchList extends Component {
     return (
       <IndividualCard>
       <CardSection>
-       <View style={pageStyle}>
-        <Text style={viewStyle}>Your Yes Matches: </Text>
-        <Text style={listStyle}>{this.state.card.name} </Text>
-        <Text style={viewStyle}>Your Maybe Swipes:</Text>
-         {this.renderMaybes()}
-       </View>
+      <View style={pageStyle}>
+      <Text style={viewStyle}>Your Yes Matches: </Text>
+      <Text style={listStyle}>{this.state.card.name} </Text>
+      <Text style={viewStyle}>Your Maybe Swipes:</Text>
+      {this.renderMaybes()}
+      </View>
       </CardSection>
 
       <CardSection>
@@ -44,6 +66,7 @@ class MatchList extends Component {
       onPress={this.onButtonPress.bind(this)}> Keep swiping!
       </Button>
       </CardSection>
+
 
       </IndividualCard>
     )
@@ -59,11 +82,11 @@ const styles = {
   },
   listStyle: {
     textAlign: 'center',
-    fontSize: 20
+    fontSize: 20,
   },
   pageStyle: {
     paddingTop: 10,
-    paddingBottom: 90
+    paddingBottom: 60
   },
 }
 

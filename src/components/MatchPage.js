@@ -7,6 +7,8 @@ import MatchButton from './MatchButton';
 import AgencyList from './AgencyList';
 import Button from './Button';
 import Header from './header';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+
 
 class MatchPage extends Component {
   constructor(props) {
@@ -59,7 +61,11 @@ class MatchPage extends Component {
           <View style={{paddingTop: 5}} >
             <Button onPress={() => Linking.openURL(this.state.card.url)}>
             <Text style={{fontSize: 40, fontWeight: 'bold', color: '#EC174F'}}>
-            Sign up Now </Text>
+            Sign up Now
+            <Text>  </Text> 
+            <FontAwesome style={{fontSize: 20}}>
+            {Icons.externalLink}
+            </FontAwesome> </Text>
             </Button>
           </View>
 
