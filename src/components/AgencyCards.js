@@ -85,7 +85,7 @@ class AgencyCards extends React.Component {
         hasMaybeAction={true}
 
         maybeMatches={this.props.maybeMatches}
-        
+
       />
 
     )
@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: 'bold',
-    fontSize: 30
+    fontSize: 30,
+    color: '#EC174F'
   },
   headerContentStyle: {
     flexDirection: 'column',
