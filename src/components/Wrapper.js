@@ -5,8 +5,8 @@ import UserForm from './UserForm';
 import MatchPage from './MatchPage';
 import Header from './header';
 import MatchList from './MatchList';
-// import SplashPage from './SplashPage';
 import Button from './Button';
+import Tutorial from './Tutorial';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -19,7 +19,6 @@ class Wrapper extends Component {
       yesMatches: [],
       modalVisible: false
     }
-    // this.modalVisible = false;
     this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
@@ -73,7 +72,6 @@ class Wrapper extends Component {
     console.log(card);
     this.setState({
       maybeMatches: [...this.state.maybeMatches, card.name]
-      // maybeMatches: this.state.maybeMatches.concat([card])
     })
     console.log(this.state, `Wrapper file Maybe for ${card.name}`)
   }
@@ -96,10 +94,6 @@ class Wrapper extends Component {
       pageToshow: MatchList
     })
   }
-
-  // state = {
-  //   modalVisible: true,
-  // };
   openModal() {
     this.setState({modalVisible:true});
   }
@@ -122,28 +116,26 @@ class Wrapper extends Component {
           source = {require("../../volley.png")} />
 
           <Button onPress={this.onButtonPress.bind(this)}>
-          start searching
+          Start Searching
           </Button>
 
-          <View style={container}>
+          <View>
             <Modal
                 visible={this.state.modalVisible}
                 animationType={'slide'}
                 onRequestClose={() => this.closeModal()}>
               <View style={modalContainer}>
-                <View style={innerContainer}>
-                  <Text>Instructions on how to use this app!</Text>
-                  <Button onPress={() => this.closeModal()}>ok got it!
+                <View>
+                  <Tutorial />
+                  <Button onPress={() => this.closeModal()}>Okay got it... I feel ready to swipe!
                   </Button>
                 </View>
               </View>
             </Modal>
-
             <Button
                 onPress={() => this.openModal()}>
                 Tutorial Instructions
             </Button>
-
           </View>
         </ImageBackground>
         </View>
@@ -230,18 +222,13 @@ const styles = {
   image: {
     width: 200,
     height: 200,
-    // backgroundColor: 'transparent',
     alignSelf: 'center',
     marginBottom: 10
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: '#EC174F'
   },
   innerContainer: {
     alignItems: 'center',
