@@ -7,6 +7,7 @@ import Header from './header';
 import MatchList from './MatchList';
 import Button from './Button';
 import Tutorial from './Tutorial';
+import SplashPageButton from './SplashPageButton';
 
 class Wrapper extends Component {
   constructor(props) {
@@ -115,10 +116,10 @@ class Wrapper extends Component {
           style={image}
           source = {require("../../volley.png")} />
 
-          <Button onPress={this.onButtonPress.bind(this)}>
-          Start Searching
-          </Button>
-
+          <SplashPageButton onPress={this.onButtonPress.bind(this)}>
+          Start the Search
+          </SplashPageButton>
+          <View style={{paddingTop: 10}}/>
           <View>
             <Modal
                 visible={this.state.modalVisible}
@@ -127,15 +128,15 @@ class Wrapper extends Component {
               <View style={modalContainer}>
                 <View>
                   <Tutorial />
-                  <Button onPress={() => this.closeModal()}>Okay got it... I feel ready to swipe!
-                  </Button>
+                  <SplashPageButton onPress={() => this.closeModal()}>Okay got it... I feel ready to swipe!
+                  </SplashPageButton>
                 </View>
               </View>
             </Modal>
-            <Button
+            <SplashPageButton
                 onPress={() => this.openModal()}>
-                Tutorial Instructions
-            </Button>
+                How to VOLLEY
+            </SplashPageButton>
           </View>
         </ImageBackground>
         </View>

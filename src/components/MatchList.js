@@ -26,14 +26,14 @@ class MatchList extends Component {
     )
   }
   // {this.renderMaybes()}
-// 
+//
 
   render() {
     return (
       <IndividualCard>
       <CardSection>
        <View>
-        <Text>Your Matches: </Text>
+        <Text>Your Yes Matches: </Text>
         <Text>{this.state.card.name} </Text>
         <Text>Your Maybes: </Text>
         <Text>{this.state.maybeMatches} </Text>

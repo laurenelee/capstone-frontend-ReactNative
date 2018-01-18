@@ -58,7 +58,7 @@ class MatchPage extends Component {
 
           <View style={{paddingTop: 5}} >
             <Button onPress={() => Linking.openURL(this.state.card.url)}>
-            <Text style={{fontSize: 40, fontWeight: 'bold'}}>
+            <Text style={{fontSize: 40, fontWeight: 'bold', color: '#EC174F'}}>
             Sign up Now </Text>
             </Button>
           </View>
