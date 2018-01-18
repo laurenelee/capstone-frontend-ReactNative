@@ -16,8 +16,10 @@ class Wrapper extends Component {
       pageToshow: '',
       card: props.card,
       maybeMatches: [],
-      yesMatches: []
+      yesMatches: [],
+      modalVisible: false
     }
+    // this.modalVisible = false;
     this.returnToForm = this.returnToForm.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.matchMoment = this.matchMoment.bind(this);
@@ -95,9 +97,9 @@ class Wrapper extends Component {
     })
   }
 
-  state = {
-    modalVisible: false,
-  };
+  // state = {
+  //   modalVisible: true,
+  // };
   openModal() {
     this.setState({modalVisible:true});
   }
@@ -130,18 +132,19 @@ class Wrapper extends Component {
                 onRequestClose={() => this.closeModal()}>
               <View style={modalContainer}>
                 <View style={innerContainer}>
-                  <Text>This is content inside of modal component</Text>
+                  <Text>Instructions on how to use this app!</Text>
                   <Button onPress={() => this.closeModal()}>ok got it!
                   </Button>
                 </View>
               </View>
             </Modal>
+
             <Button
                 onPress={() => this.openModal()}>
                 Tutorial Instructions
             </Button>
-          </View>
 
+          </View>
         </ImageBackground>
         </View>
       )}
@@ -211,7 +214,7 @@ const styles = {
     paddingTop: 80,
     paddingBottom: 20,
     backgroundColor: 'transparent',
-    color: 'rgb(252, 198, 59)',
+    color: '#EC174F',
     textShadowRadius: 2,
     textShadowOffset: {width: 0, height: 2},
     textShadowColor: 'rgb(102, 88, 47)',
