@@ -53,7 +53,7 @@ class Wrapper extends Component {
   }
   onSearch(volunteer_type, zip, age_minimum) {
     console.log('searching ');
-    fetch(`http://localhost:3000/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`)
+    fetch(`https://volley-api.herokuapp.com/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`)
     .then(function(response) {
       return response.json()
     }).then((json) => {
