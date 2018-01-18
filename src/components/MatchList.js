@@ -20,23 +20,22 @@ class MatchList extends Component {
     this.props.returnToCards()
   }
   renderMaybes() {
-    console.log(this.state.maybeMatches);
-    this.state.maybeMatches.map(maybe =>
-      <CardSection key={maybe.name} maybe={maybe} />
+    return this.props.maybeMatches.map(maybe => <Text style={styles.listStyle}> {maybe.name} </Text>
     )
   }
-  // {this.renderMaybes()}
-//
+
 
   render() {
+    const { pageStyle, viewStyle, listStyle } = styles;
+
     return (
       <IndividualCard>
       <CardSection>
-       <View>
-        <Text>Your Yes Matches: </Text>
-        <Text>{this.state.card.name} </Text>
-        <Text>Your Maybes: </Text>
-        <Text>{this.state.maybeMatches} </Text>
+       <View style={pageStyle}>
+        <Text style={viewStyle}>Your Yes Matches: </Text>
+        <Text style={listStyle}>{this.state.card.name} </Text>
+        <Text style={viewStyle}>Your Maybe Swipes:</Text>
+         {this.renderMaybes()}
        </View>
       </CardSection>
 
@@ -49,6 +48,23 @@ class MatchList extends Component {
       </IndividualCard>
     )
   }
+}
+const styles = {
+  viewStyle: {
+    fontSize: 30,
+    fontFamily: 'AmericanTypewriter-Bold',
+    textAlign: 'center',
+    paddingTop: 20,
+    paddingBottom: 10
+  },
+  listStyle: {
+    textAlign: 'center',
+    fontSize: 20
+  },
+  pageStyle: {
+    paddingTop: 10,
+    paddingBottom: 90
+  },
 }
 
 

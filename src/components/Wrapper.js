@@ -72,7 +72,7 @@ class Wrapper extends Component {
     this.state.card = card
     console.log(card);
     this.setState({
-      maybeMatches: [...this.state.maybeMatches, card.name]
+      maybeMatches: [...this.state.maybeMatches, card]
     })
     console.log(this.state, `Wrapper file Maybe for ${card.name}`)
   }
@@ -190,6 +190,7 @@ class Wrapper extends Component {
         handleMaybe={this.handleMaybe}
         handleYup={this.handleYup}
         showMatchList={this.showMatchList}
+        // renderMaybes={this.renderMaybes}
         />
         </View>
       )}
