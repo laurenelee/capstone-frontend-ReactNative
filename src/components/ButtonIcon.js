@@ -15,23 +15,9 @@ const Button = ({ onPress, children }) => {
 
 const styles = {
   textStyle: {
-  //   alignSelf: 'center',
-  //   color: '#007aff',
-  //   fontSize: 16,
-  //   fontWeight: '600',
-  //   paddingTop: 10,
-  //   paddingBottom: 10
   },
   buttonStyle: {
     paddingRight: 3
-    // flex: 1,
-    // alignSelf: 'stretch', //we want element to position itself to stretch
-    // backgroundColor: '#fff',
-    // borderWidth: 1,
-    // borderColor: '#007aff',
-    // marginLeft: 5,
-    // marginRight: 5,
-    // borderRadius: 4
   }
 };
 

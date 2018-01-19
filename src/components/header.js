@@ -29,7 +29,7 @@ const styles = {
   },
   textStyle: {
     color: 'rgb(255, 255, 255)',
-    fontSize: 30
+    fontSize: 27
   }
 };
 

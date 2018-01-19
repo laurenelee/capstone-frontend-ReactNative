@@ -16,7 +16,7 @@ const SplashPageButton = ({ onPress, children }) => {
 const styles = {
   textStyle: {
     alignSelf: 'center',
-    color: '#EC174F',
+    color: 'white',
     fontSize: 16,
     fontWeight: '600',
     paddingTop: 10,
@@ -25,14 +25,14 @@ const styles = {
   buttonStyle: {
     // flex: 1,
     // alignSelf: 'stretch', //we want element to position itself to stretch
-    backgroundColor: '#fff',
+    backgroundColor: '#f097ae',
     borderWidth: 1,
     borderColor: '#EC174F',
     marginLeft: 20,
     marginRight: 20,
     borderRadius: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2},
+    shadowOffset: { width: 0, height: 3},
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,

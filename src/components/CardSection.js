@@ -14,9 +14,9 @@ const styles = {
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: '#fff',
-    justifyContent: 'center', //was flex-start
-    flexDirection: 'column', // was row
-    alignItems: 'center', // this finally centered the image! 1/5/18
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
     borderColor: '#ddd',
     position: 'relative',
   }
