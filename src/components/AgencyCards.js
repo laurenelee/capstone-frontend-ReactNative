@@ -5,6 +5,7 @@ import CardSection from './CardSection';
 import IndividualCard from './IndividualCard';
 import IconButton from './IconButton';
 import MatchPage from './MatchPage';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 const SWIPE_THRESHOLD = 50;
 
@@ -31,10 +32,23 @@ class Card extends React.Component {
 
           <View style={styles.headerContentStyle}>
             <Text style={styles.bold}>{this.props.name}</Text>
-            <Text><B>Volunteer Type: </B> {this.props.volunteer_type}</Text>
-            <Text><B>Description:  </B>{this.props.description}</Text>
-            <Text><B>Zipcode: </B>{this.props.zip}</Text>
-            <Text><B>Age Minimum: </B>{this.props.age_minimum}</Text>
+
+            <Text><FontAwesome style={styles.fontAwesome}>{Icons.handshakeO}
+            </FontAwesome>   {this.props.volunteer_type}</Text>
+
+            <Text><FontAwesome style={styles.fontAwesome}>{Icons.mapMarker}
+            </FontAwesome>       {this.props.zip}</Text>
+
+            <Text><FontAwesome style={styles.fontAwesome}>{Icons.idCardO}
+            </FontAwesome>    {this.props.age_minimum}</Text>
+
+            <View style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                paddingTop: 10}}/>
+
+            <Text style={{paddingTop: 10, paddingBottom: 10 }}>{this.props.description}</Text>
+
           </View>
         </CardSection>
       </IndividualCard>
@@ -107,7 +121,14 @@ const styles = StyleSheet.create({
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
-    alignItems: 'center'
+    paddingLeft: 15,
+    paddingRight: 15
+    // alignItems: 'center'
+  },
+  fontAwesome: {
+    color: '#007aff',
+    fontSize: 20,
+
   },
   imageStyle: {
     flexDirection: 'column',

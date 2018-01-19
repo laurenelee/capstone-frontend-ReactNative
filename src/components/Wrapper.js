@@ -53,6 +53,8 @@ class Wrapper extends Component {
   }
   onSearch(volunteer_type, zip, age_minimum) {
     console.log('searching ');
+    // https://volley-api.herokuapp.com
+    // http://localhost:3000
     fetch(`https://volley-api.herokuapp.com/search?volunteer_type=${volunteer_type}&zip=${zip}&age_minimum=${age_minimum}`)
     .then(function(response) {
       return response.json()
@@ -89,6 +91,10 @@ class Wrapper extends Component {
   }
   handleNope(card) {
     console.log(`Wrapper file Nope for ${card.name}`)
+    console.log(this.state.agencies);
+    // this.setState({
+    //
+    // })
   }
   showMatchList() {
     this.setState({

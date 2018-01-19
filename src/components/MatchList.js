@@ -24,6 +24,7 @@ class MatchList extends Component {
     this.props.returnToCards()
   }
   pressBackButton() {
+    // this.alert('List sent!')
     this.props.returnToForm()
   }
   renderMaybeText() {
