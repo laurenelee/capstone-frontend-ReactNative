@@ -5,14 +5,10 @@ import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ButtonIcon from './ButtonIcon';
 
 
-
-// make Component
-// name it the same as file name
 const Header = (props) => {
   const { textStyle, mainStyle, fontAwesome } = styles;
 
   return (
-
     <View style={mainStyle}>
       <ButtonIcon onPress={console.log('pressing button')}>
         <FontAwesome style={fontAwesome}>
@@ -41,14 +37,13 @@ const styles = {
   fontAwesome: {
     fontSize: 30,
     color: '#007aff',
-    paddingRight: 20,
+    // alignItems: 'flex-start',
+
   },
 
   textStyle: {
     color: 'rgb(255, 255, 255)',
     fontSize: 27,
-    paddingRight: 20,
-
   }
 };
 

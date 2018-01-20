@@ -24,10 +24,8 @@ class MatchList extends Component {
     this.props.returnToCards()
   }
   pressBackButton() {
-    // this.alert('List sent!')
     this.props.returnToForm()
   }
-  // paddingBottom: 5, paddingTop: 10, REMOVED
   renderMaybeText() {
     return this.props.maybeMatches.map(maybe =>
       <Text style={{fontSize: 20, marginLeft: -30, flexDirection: 'column'}} key={maybe.id}>
