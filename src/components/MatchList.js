@@ -6,7 +6,7 @@ import ButtonIcon from './ButtonIcon';
 import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
-
+import ToggleBox from './ToggleBox';
 
 class MatchList extends Component {
   constructor(props) {
@@ -16,7 +16,6 @@ class MatchList extends Component {
       card: props.card,
       maybeMatches: props.maybeMatches,
       parent_email: '',
-      isHidden: true
       // cards: props.agencies,
     }
     console.log(this.state);
@@ -32,23 +31,10 @@ class MatchList extends Component {
       <Text style={{fontSize: 20, marginLeft: -30, flexDirection: 'column'}} key={maybe.id}>
         <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
-        <Text onPress={this.toggleHidden.bind(this)}> {maybe.name} </Text>
-
-        {!this.state.isHidden &&
-          <View style={{ width: 320, height: 100,
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              paddingTop: 10, paddingBottom: 10}}>
-            <Text style={{width: 300, fontSize: 10, flexDirection: 'column', justifyContent: 'space-around', paddingLeft: 40, paddingRight: 15 }}> {maybe.description}</Text>
-          </View>
-         }
+        <Text onPress={() => console.log(`pressing ${maybe.name}`)}> {maybe.name}
+        </Text>
       </Text>
     )
-  }
-  toggleHidden () {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
   }
   alert(msg) {
     console.log(msg)
@@ -70,6 +56,18 @@ class MatchList extends Component {
         { cancelable: false }
       )}
     }
+  showData() {
+    console.log('in showData function');
+    return
+    <ToggleBox label='Show me something' value='asd' style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+
+      <View style={{height: 300, alignItems: 'center', justifyContent: 'center', backgroundColor: '#eee'}}>
+
+      <Text>Hello, how are you?</Text>
+      </View>
+    </ToggleBox>
+    console.log('bottom of showData function');
+  }
   render() {
     const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle } = styles;
 
@@ -81,10 +79,18 @@ class MatchList extends Component {
           <View style={pageStyle}>
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
 
-            <Text style={{marginLeft: -30, fontSize: 20}}>
+            <View style={{marginLeft: -30, fontSize: 20}}>
               <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.state.card.photo_url}}/>
-              <Text onPress={() => Linking.openURL(this.state.card.url)} > {this.state.card.name} </Text>
-            </Text>
+
+              <ToggleBox label={this.state.card.name} value='more' style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+
+                <View style={{height: 30, backgroundColor: '#eee'}}>
+                <Text>{this.state.card.volunteer_type}</Text>
+                </View>
+
+              </ToggleBox>
+            </View>
+
             <Text style={{paddingBottom: 10}} />
             <Text style={viewStyle}>Your <B>Maybe</B> Swipes:</Text>
             {this.renderMaybeText()}
@@ -133,11 +139,6 @@ class MatchList extends Component {
     )
   }
 }
-// const Child = (props) => (
-// <Text className='modal'>
-//     hi!
-//   </Text>
-// )
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
