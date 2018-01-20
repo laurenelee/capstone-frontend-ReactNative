@@ -15,7 +15,8 @@ class MatchList extends Component {
       pageToshow: MatchList,
       card: props.card,
       maybeMatches: props.maybeMatches,
-      parent_email: ''
+      parent_email: '',
+      isHidden: true
       // cards: props.agencies,
     }
     console.log(this.state);
@@ -31,10 +32,23 @@ class MatchList extends Component {
       <Text style={{fontSize: 20, marginLeft: -30, flexDirection: 'column'}} key={maybe.id}>
         <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
-        <Text onPress={() => Linking.openURL(maybe.url)}> {maybe.name}
-        </Text>
+        <Text onPress={this.toggleHidden.bind(this)}> {maybe.name} </Text>
+
+        {!this.state.isHidden &&
+          <View style={{ width: 320, height: 100,
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              paddingTop: 10, paddingBottom: 10}}>
+            <Text style={{width: 300, fontSize: 10, flexDirection: 'column', justifyContent: 'space-around', paddingLeft: 40, paddingRight: 15 }}> {maybe.description}</Text>
+          </View>
+         }
       </Text>
     )
+  }
+  toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
   }
   alert(msg) {
     console.log(msg)
@@ -119,6 +133,11 @@ class MatchList extends Component {
     )
   }
 }
+// const Child = (props) => (
+// <Text className='modal'>
+//     hi!
+//   </Text>
+// )
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
