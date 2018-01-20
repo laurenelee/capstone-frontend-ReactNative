@@ -32,7 +32,7 @@ class MatchPage extends Component {
     this.props.showMatchList()
   }
   render() {
-    const { matchCard, textStyle, bottomButton } = styles;
+    const { matchCard, textStyle, bottomButton, matchStyle } = styles;
 
     return (
         <View>
@@ -41,7 +41,7 @@ class MatchPage extends Component {
             <CardSection>
               <ImageBackground style={{width: 320, height: 350}} source={require("../../sparkler.jpeg")}>
                 <View style={matchCard}>
-                  <Text style={textStyle}>You matched with {this.state.card.name}!</Text>
+                  <Text style={textStyle}>You matched with</Text><Text style={matchStyle}> {this.state.card.name}</Text>
                 </View>
               </ImageBackground>
             </CardSection>
@@ -62,7 +62,7 @@ class MatchPage extends Component {
             <Button onPress={() => Linking.openURL(this.state.card.url)}>
             <Text style={{fontSize: 40, fontWeight: 'bold', color: '#EC174F'}}>
             Sign up Now
-            <Text>  </Text> 
+            <Text>  </Text>
             <FontAwesome style={{fontSize: 20}}>
             {Icons.externalLink}
             </FontAwesome> </Text>
@@ -89,6 +89,13 @@ const styles = {
   textStyle: {
     textAlign: 'center',
     fontSize: 60,
+    fontWeight: '800',
+    color: '#fbfcfe',
+    backgroundColor: 'transparent',
+  },
+  matchStyle: {
+    textAlign: 'center',
+    fontSize: 30,
     fontWeight: '800',
     color: '#fbfcfe',
     backgroundColor: 'transparent',

@@ -23,7 +23,7 @@ class Card extends React.Component {
     return (
       <IndividualCard>
         <CardSection >
-          <View>
+          <View style={{paddingTop: 5}}>
             <Image
             style={styles.imageStyle}
             source= {{ uri: this.props.photo_url }}
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 250,
     height: 270,
+    paddingTop: 5
   },
   icons: {
     flexDirection: 'row',

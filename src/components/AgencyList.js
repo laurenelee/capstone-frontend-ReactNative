@@ -35,7 +35,7 @@ class AgencyList extends Component {
             <Button onPress={this.onButtonPress.bind(this)}>
             New Search
             </Button>
-          <View style={{height: 450, paddingTop: 20}}>
+          <View style={{height: 500, paddingTop: 25}}>
             <AgencyCards
             returnToForm={this.props.returnToForm}
             returnToCards={this.props.returnToCards}

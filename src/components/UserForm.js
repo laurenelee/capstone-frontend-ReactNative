@@ -21,41 +21,41 @@ class UserForm extends Component {
 
   render() {
     let volunteer_type = [{
-      value: 'seniors',
+      value: 'Seniors',
     }, {
-      value: 'homelessness',
+      value: 'Homelessness',
     }, {
-      value: 'arts and culture',
+      value: 'Arts and Culture',
     }, {
-      value: 'animals',
+      value: 'Animals',
     }, {
-      value: 'advocacy and human rights',
+      value: 'Advocacy and Human Rights',
     }, {
-      value: 'children and youth',
+      value: 'Children and Youth',
     }, {
-      value: 'computers and technology',
+      value: 'Computers and Technology',
     }, {
-      value: 'community',
+      value: 'Community',
     }, {
-      value: 'education and literacy',
+      value: 'Education and Literacy',
     }, {
-      value: 'health and medicine',
+      value: 'Health and Medicine',
     }, {
-      value: 'disaster relief',
+      value: 'Disaster Relief',
     }, {
       value: 'LGBT',
     }, {
-      value: 'justice and legal',
+      value: 'Justice and Legal',
     }, {
-      value: 'environment',
+      value: 'Environment',
     }, {
-      value: 'faith-based',
+      value: 'Faith-Based',
     }, {
-      value: 'crisis support',
+      value: 'Crisis Support',
     }, {
-      value: 'immigrants and refugees',
+      value: 'Immigrants and Refugees',
     }, {
-      value: 'sports and recreation',
+      value: 'Sports and Recreation',
     }];
     const { dropdownStyle, container, errorTextStyle } = styles;
 

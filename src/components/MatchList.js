@@ -27,13 +27,13 @@ class MatchList extends Component {
     // this.alert('List sent!')
     this.props.returnToForm()
   }
+  // paddingBottom: 5, paddingTop: 10, REMOVED
   renderMaybeText() {
     return this.props.maybeMatches.map(maybe =>
-
-      <Text style={{paddingBottom: 5, paddingTop: 10}} key={maybe.id}>
+      <Text style={{fontSize: 20, marginLeft: -80, flexDirection: 'column'}} key={maybe.id}>
         <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
-        <Text style={styles.listStyle} onPress={() => Linking.openURL(maybe.url)}> {maybe.name}
+        <Text onPress={() => Linking.openURL(maybe.url)}> {maybe.name}
         </Text>
       </Text>
     )
@@ -69,9 +69,9 @@ class MatchList extends Component {
           <View style={pageStyle}>
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
 
-            <Text>
+            <Text style={{marginLeft: -80, fontSize: 20}}>
               <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.state.card.photo_url}}/>
-              <Text onPress={() => Linking.openURL(this.state.card.url)} style={{fontSize: 25}}> {this.state.card.name} </Text>
+              <Text onPress={() => Linking.openURL(this.state.card.url)} > {this.state.card.name} </Text>
             </Text>
 
             <Text style={viewStyle}>Your <B>Maybe</B> Swipes:</Text>
@@ -94,7 +94,7 @@ class MatchList extends Component {
           <View style={{flexDirection: 'row', alignSelf: 'stretch'}}>
 
             <ButtonIcon onPress={this.onSend.bind(this)}>
-              <FontAwesome style={{fontSize: 30, color: '#EC174F'}}>
+              <FontAwesome style={{fontSize: 30, color: '#007aff'}}>
                 {Icons.sendO}
               </FontAwesome>
             </ButtonIcon>
@@ -125,20 +125,21 @@ const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
   viewStyle: {
-    fontSize: 33,
+    fontSize: 23,
     // fontFamily: 'AmericanTypewriter',
-    marginLeft: -30,
+    marginLeft: -100,
     paddingTop: 10,
     paddingBottom: 10,
-    color: '#EC174F'
+    color: 'black'
   },
   listStyle: {
     // textAlign: 'center',
     fontSize: 25,
-    paddingBottom: 2
+    paddingBottom: 2,
+    marginLeft: -80
   },
   pageStyle: {
-    paddingTop: 10,
+    // paddingTop: 10,
     paddingBottom: 20
   },
   formStyle: {

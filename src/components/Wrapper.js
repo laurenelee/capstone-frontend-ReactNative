@@ -92,9 +92,17 @@ class Wrapper extends Component {
   handleNope(card) {
     console.log(`Wrapper file Nope for ${card.name}`)
     console.log(this.state.agencies);
+    this.remove(this.state.agencies, card)
+    console.log(this.state.agencies);
     // this.setState({
     //
     // })
+  }
+  remove(array, element) {
+    const index = array.indexOf(element);
+    if (index !== -1) {
+        array.splice(index, 1);
+    }
   }
   showMatchList() {
     this.setState({
