@@ -2,18 +2,23 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+import ButtonIcon from './ButtonIcon';
+
 
 
 // make Component
 // name it the same as file name
 const Header = (props) => {
-  const { textStyle, viewStyle, mainStyle, fontAwesome } = styles;
+  const { textStyle, mainStyle, fontAwesome } = styles;
 
   return (
+
     <View style={mainStyle}>
-    <FontAwesome style={fontAwesome}>
-      {Icons.bars}
-    </FontAwesome>
+      <ButtonIcon onPress={console.log('pressing button')}>
+        <FontAwesome style={fontAwesome}>
+          {props.fontAwesome}
+        </FontAwesome>
+      </ButtonIcon>
       <Text style={textStyle}>
         {props.headerText}
       </Text>
@@ -24,6 +29,7 @@ const Header = (props) => {
 const styles = {
   mainStyle: {
     flexDirection: 'row',
+    justifyContent: 'center',
     backgroundColor: '#EC174F',
     height: 60,
     paddingTop: 25,
@@ -35,15 +41,14 @@ const styles = {
   fontAwesome: {
     fontSize: 30,
     color: '#007aff',
-    paddingLeft: 10
+    paddingRight: 20,
   },
-  viewStyle: {
 
-  },
   textStyle: {
     color: 'rgb(255, 255, 255)',
     fontSize: 27,
-    paddingLeft: 50
+    paddingRight: 20,
+
   }
 };
 

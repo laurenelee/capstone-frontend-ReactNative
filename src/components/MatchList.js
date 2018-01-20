@@ -30,7 +30,7 @@ class MatchList extends Component {
   // paddingBottom: 5, paddingTop: 10, REMOVED
   renderMaybeText() {
     return this.props.maybeMatches.map(maybe =>
-      <Text style={{fontSize: 20, marginLeft: -80, flexDirection: 'column'}} key={maybe.id}>
+      <Text style={{fontSize: 20, marginLeft: -30, flexDirection: 'column'}} key={maybe.id}>
         <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
         <Text onPress={() => Linking.openURL(maybe.url)}> {maybe.name}
@@ -69,11 +69,11 @@ class MatchList extends Component {
           <View style={pageStyle}>
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
 
-            <Text style={{marginLeft: -80, fontSize: 20}}>
+            <Text style={{marginLeft: -30, fontSize: 20}}>
               <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.state.card.photo_url}}/>
               <Text onPress={() => Linking.openURL(this.state.card.url)} > {this.state.card.name} </Text>
             </Text>
-
+            <Text style={{paddingBottom: 10}} />
             <Text style={viewStyle}>Your <B>Maybe</B> Swipes:</Text>
             {this.renderMaybeText()}
           </View>
@@ -127,7 +127,7 @@ const styles = {
   viewStyle: {
     fontSize: 23,
     // fontFamily: 'AmericanTypewriter',
-    marginLeft: -100,
+    marginLeft: -30,
     paddingTop: 10,
     paddingBottom: 10,
     color: 'black'

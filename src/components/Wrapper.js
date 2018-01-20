@@ -94,9 +94,6 @@ class Wrapper extends Component {
     console.log(this.state.agencies);
     this.remove(this.state.agencies, card)
     console.log(this.state.agencies);
-    // this.setState({
-    //
-    // })
   }
   remove(array, element) {
     const index = array.indexOf(element);

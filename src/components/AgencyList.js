@@ -5,6 +5,8 @@ import AgencyDetail from './AgencyDetail';
 import Button from './Button';
 import AgencyCards from './AgencyCards';
 import Header from './header';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+
 
 class AgencyList extends Component {
   constructor(props) {
@@ -30,7 +32,7 @@ class AgencyList extends Component {
     console.log(this.state);
     return (
       <View>
-        <Header headerText={'Swipe Opportunities'} />
+        <Header fontAwesome={Icons.bars} headerText={'Swipe Opportunities'} />
         <View style={{paddingTop: 5}}>
             <Button onPress={this.onButtonPress.bind(this)}>
             New Search
