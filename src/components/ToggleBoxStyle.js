@@ -14,11 +14,12 @@ export default StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     padding: 10,
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'center',
 
   },
   label: {
+    fontWeight: 'bold'
     // flex: 5,
   },
   value: {

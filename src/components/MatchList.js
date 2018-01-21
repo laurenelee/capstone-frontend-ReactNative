@@ -35,15 +35,20 @@ class MatchList extends Component {
 
           <View style={{backgroundColor: '#eee'}}>
           <Text><FontAwesome style={styles.fontAwesome}>{Icons.handshakeO}
-          </FontAwesome>  {maybe.volunteer_type}</Text>
+          </FontAwesome>   {maybe.volunteer_type}</Text>
 
           <Text><FontAwesome style={styles.fontAwesome}>{Icons.mapMarker}
-          </FontAwesome> {maybe.zip}</Text>
+          </FontAwesome>       {maybe.zip}</Text>
 
           <Text><FontAwesome style={styles.fontAwesome}>{Icons.idCardO}
-          </FontAwesome> {maybe.age_minimum}</Text>
-
-          <Text>{maybe.description}</Text>
+          </FontAwesome>    {maybe.age_minimum}</Text>
+          <Text style={{PaddingBottom: 5}} />
+          <Text>{maybe.description} </Text>
+          <Text style={{PaddingBottom: 5}} />
+          <Button onPress={() => Linking.openURL(maybe.url)}><Text> Sign up Now
+           <FontAwesome style={styles.fontAwesome}> {Icons.externalLink}
+          </FontAwesome> </Text> </Button>
+          <Text style={{PaddingBottom: 5}} />
           </View>
         </ToggleBox>
 
@@ -86,8 +91,8 @@ class MatchList extends Component {
     const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle, fontAwesome } = styles;
 
     return (
-      <IndividualCard>
-      <ScrollView>
+      <IndividualCard >
+      <ScrollView >
 
         <CardSection>
           <View style={pageStyle}>
@@ -99,15 +104,20 @@ class MatchList extends Component {
 
                 <View style={{backgroundColor: '#eee'}}>
                 <Text><FontAwesome style={fontAwesome}>{Icons.handshakeO}
-                </FontAwesome>  {this.state.card.volunteer_type}</Text>
+                </FontAwesome>   {this.state.card.volunteer_type}</Text>
 
                 <Text><FontAwesome style={fontAwesome}>{Icons.mapMarker}
-                </FontAwesome> {this.state.card.zip}</Text>
+                </FontAwesome>       {this.state.card.zip}</Text>
 
                 <Text><FontAwesome style={fontAwesome}>{Icons.idCardO}
-                </FontAwesome> {this.state.card.age_minimum}</Text>
-
-                <Text>{this.state.card.description}</Text>
+                </FontAwesome>    {this.state.card.age_minimum}</Text>
+                <Text style={{PaddingBottom: 5}} />
+                <Text>{this.state.card.description} </Text>
+                <Text style={{PaddingBottom: 5}} />
+                <Button onPress={() => Linking.openURL(this.state.card.url)}><Text> Sign up Now
+                 <FontAwesome style={fontAwesome}> {Icons.externalLink}
+                </FontAwesome> </Text> </Button>
+                <Text style={{PaddingBottom: 5}} />
                 </View>
 
               </ToggleBox>
@@ -157,7 +167,6 @@ class MatchList extends Component {
         </CardSection>
         </ScrollView>
       </IndividualCard>
-
 
     )
   }

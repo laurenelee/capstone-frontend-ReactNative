@@ -95,8 +95,10 @@ class ToggleBox extends React.Component {
           onLayout={this.setMinHeight}
         >
           <View style={styles.titleContainer}>
-            <Text style={styles.label}>{this.props.label}</Text>
+
             <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.props.photo_url}}/>
+
+            <Text style={styles.label}>{this.props.label}</Text>
 
             {this.props.value ? <Text style={styles.value}>{this.props.value}</Text> : null}
 
