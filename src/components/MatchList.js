@@ -8,6 +8,7 @@ import CardSection from './CardSection';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ToggleBox from './ToggleBox';
 
+
 class MatchList extends Component {
   constructor(props) {
     super(props);
@@ -28,12 +29,26 @@ class MatchList extends Component {
   }
   renderMaybeText() {
     return this.props.maybeMatches.map(maybe =>
-      <Text style={{fontSize: 20, marginLeft: -30, flexDirection: 'column'}} key={maybe.id}>
+      <View style={styles.listStyle} key={maybe.id}>
         <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
-        <Text onPress={() => console.log(`pressing ${maybe.name}`)}> {maybe.name}
-        </Text>
-      </Text>
+        <ToggleBox label={maybe.name} style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+
+          <View style={{backgroundColor: '#eee'}}>
+          <Text><FontAwesome style={styles.fontAwesome}>{Icons.handshakeO}
+          </FontAwesome>  {maybe.volunteer_type}</Text>
+
+          <Text><FontAwesome style={styles.fontAwesome}>{Icons.mapMarker}
+          </FontAwesome> {maybe.zip}</Text>
+
+          <Text><FontAwesome style={styles.fontAwesome}>{Icons.idCardO}
+          </FontAwesome> {maybe.age_minimum}</Text>
+
+          <Text>{maybe.description}</Text>
+          </View>
+        </ToggleBox>
+
+      </View>
     )
   }
   alert(msg) {
@@ -69,29 +84,39 @@ class MatchList extends Component {
     console.log('bottom of showData function');
   }
   render() {
-    const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle } = styles;
+    const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle, fontAwesome } = styles;
 
     return (
-      <ScrollView>
       <IndividualCard>
+      <ScrollView>
 
         <CardSection>
           <View style={pageStyle}>
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
 
-            <View style={{marginLeft: -30, fontSize: 20}}>
+            <View style={listStyle}>
               <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.state.card.photo_url}}/>
 
-              <ToggleBox label={this.state.card.name} value='more' style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+              <ToggleBox label={this.state.card.name} style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
 
-                <View style={{height: 30, backgroundColor: '#eee'}}>
-                <Text>{this.state.card.volunteer_type}</Text>
+                <View style={{backgroundColor: '#eee'}}>
+                <Text><FontAwesome style={fontAwesome}>{Icons.handshakeO}
+                </FontAwesome>  {this.state.card.volunteer_type}</Text>
+
+                <Text><FontAwesome style={fontAwesome}>{Icons.mapMarker}
+                </FontAwesome> {this.state.card.zip}</Text>
+
+                <Text><FontAwesome style={fontAwesome}>{Icons.idCardO}
+                </FontAwesome> {this.state.card.age_minimum}</Text>
+
+                <Text>{this.state.card.description}</Text>
                 </View>
 
               </ToggleBox>
             </View>
 
             <Text style={{paddingBottom: 10}} />
+
             <Text style={viewStyle}>Your <B>Maybe</B> Swipes:</Text>
             {this.renderMaybeText()}
           </View>
@@ -132,9 +157,9 @@ class MatchList extends Component {
         <Text style={{paddingBottom: 10}} />
 
         </CardSection>
-
+        </ScrollView>
       </IndividualCard>
-      </ScrollView>
+
 
     )
   }
@@ -145,16 +170,16 @@ const styles = {
   viewStyle: {
     fontSize: 23,
     // fontFamily: 'AmericanTypewriter',
-    marginLeft: -30,
+    // marginLeft: -30,
     paddingTop: 10,
     paddingBottom: 10,
-    color: 'black'
+    color: 'black',
   },
   listStyle: {
     // textAlign: 'center',
-    fontSize: 25,
+    // fontSize: 25,
     paddingBottom: 2,
-    marginLeft: -80
+    // marginLeft: 80
   },
   pageStyle: {
     // paddingTop: 10,
@@ -172,7 +197,12 @@ const styles = {
     fontSize: 20,
     alignSelf: 'center',
     color: 'red'
-  }
+  },
+  fontAwesome: {
+    color: '#007aff',
+    fontSize: 20,
+
+  },
 }
 
 
