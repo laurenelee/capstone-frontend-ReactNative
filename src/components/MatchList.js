@@ -30,9 +30,8 @@ class MatchList extends Component {
   renderMaybeText() {
     return this.props.maybeMatches.map(maybe =>
       <View style={styles.listStyle} key={maybe.id}>
-        <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: maybe.photo_url}}/>
 
-        <ToggleBox label={maybe.name} style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+        <ToggleBox label={maybe.name} photo_url={maybe.photo_url}  style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
 
           <View style={{backgroundColor: '#eee'}}>
           <Text><FontAwesome style={styles.fontAwesome}>{Icons.handshakeO}
@@ -95,9 +94,8 @@ class MatchList extends Component {
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
 
             <View style={listStyle}>
-              <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.state.card.photo_url}}/>
 
-              <ToggleBox label={this.state.card.name} style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+              <ToggleBox label={this.state.card.name} photo_url={this.state.card.photo_url}  style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
 
                 <View style={{backgroundColor: '#eee'}}>
                 <Text><FontAwesome style={fontAwesome}>{Icons.handshakeO}

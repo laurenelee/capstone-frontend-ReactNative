@@ -20,6 +20,7 @@ class ToggleBox extends React.Component {
     label: PropTypes.string.isRequired,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    photo_url: PropTypes.string.isRequired
   }
 
   static defaultProps = {
@@ -95,7 +96,10 @@ class ToggleBox extends React.Component {
         >
           <View style={styles.titleContainer}>
             <Text style={styles.label}>{this.props.label}</Text>
+            <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.props.photo_url}}/>
+
             {this.props.value ? <Text style={styles.value}>{this.props.value}</Text> : null}
+
             <Icon
               name={icon}
               color={this.props.arrowColor}
