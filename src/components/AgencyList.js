@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Alert } from 'react-native';
 import axios from 'axios';
 import AgencyDetail from './AgencyDetail';
 import Button from './Button';
 import AgencyCards from './AgencyCards';
 import Header from './header';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+import MatchButton from './MatchButton';
+
 
 
 class AgencyList extends Component {
@@ -27,17 +29,34 @@ class AgencyList extends Component {
   onButtonPress() {
     this.props.returnToForm()
   }
-
+  onSeeMatches() {
+    if (this.props.card == "") {
+      return Alert.alert('No matches yet!', 'Swipe Up or Right to save an agency',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+        {text: 'OK', onPress: () => this.setState({pageToshow: AgencyList})},
+      ],
+      {cancelable: false}
+    )} else {
+      this.props.showMatchList()
+    }
+  }
   render() {
     console.log(this.state);
     return (
       <View>
-        <Header fontAwesome={Icons.bars} headerText={'Swipe Opportunities'} />
-        <View style={{paddingTop: 5}}>
-            <Button onPress={this.onButtonPress.bind(this)}>
-            New Search
-            </Button>
-          <View style={{height: 500, paddingTop: 25}}>
+        <Header headerText={'Swipe Opportunities'} />
+        <View >
+            <View style={{flexDirection: 'row'}}>
+              <MatchButton onPress={this.onButtonPress.bind(this)}>
+              New Search
+              </MatchButton>
+              <MatchButton onPress={this.onSeeMatches.bind(this)}>
+              See all Matches
+              </MatchButton>
+            </View>
+
+          <View style={{height: 500, paddingTop: 10}}>
             <AgencyCards
             returnToForm={this.props.returnToForm}
             returnToCards={this.props.returnToCards}

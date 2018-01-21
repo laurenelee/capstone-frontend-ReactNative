@@ -15,7 +15,7 @@ class Wrapper extends Component {
     this.state  = {
       agencies: [],
       pageToshow: '',
-      card: props.card,
+      card: '',
       maybeMatches: [],
       yesMatches: [],
       modalVisible: false
@@ -164,6 +164,7 @@ class Wrapper extends Component {
         <View>
         <AgencyList
         agencies={this.state.agencies}
+        card={this.state.card}
         matchMoment={this.matchMoment}
         handleYup={this.handleYup}
         handleNope={this.handleNope}

@@ -105,9 +105,12 @@ class MatchList extends Component {
       }
     }
   render() {
+    console.log(this.props)
       const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle, fontAwesome } = styles;
 
+
     return (
+
       <IndividualCard >
       <ScrollView >
 
@@ -170,6 +173,7 @@ class MatchList extends Component {
     )
   }
 }
+
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
@@ -210,7 +214,6 @@ const styles = {
   },
   hidden: {
     height: 0,
-    backgroundColor: 'rgb(158, 10, 81)'
   }
 }
 

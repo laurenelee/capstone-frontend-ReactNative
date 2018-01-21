@@ -10,7 +10,7 @@ const Header = (props) => {
 
   return (
     <View style={mainStyle}>
-      <ButtonIcon onPress={console.log('pressing button')}>
+      <ButtonIcon>
         <FontAwesome style={fontAwesome}>
           {props.fontAwesome}
         </FontAwesome>

@@ -118,7 +118,7 @@ const styles = {
   dropdownStyle: {
     color: '#000',
     paddingRight: 1,
-    paddingLeft: 140,
+    paddingLeft: 135,
     fontSize: 18
   },
   container: {
