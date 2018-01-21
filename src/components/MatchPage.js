@@ -47,7 +47,6 @@ class MatchPage extends Component {
               </ImageBackground>
             </CardSection>
           </IndividualCard>
-
           <View style={{flexDirection: 'row'}}>
             <MatchButton
             onPress={this.onButtonPress.bind(this)}> Keep swiping!

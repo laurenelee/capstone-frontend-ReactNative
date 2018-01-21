@@ -46,7 +46,7 @@ class AgencyList extends Component {
     return (
       <View>
         <Header headerText={'Swipe Opportunities'} />
-        <View >
+        <View>
             <View style={{flexDirection: 'row'}}>
               <MatchButton onPress={this.onButtonPress.bind(this)}>
               New Search
