@@ -17,6 +17,7 @@ class MatchList extends Component {
       card: props.card,
       maybeMatches: props.maybeMatches,
       parent_email: '',
+      show: true
       // cards: props.agencies,
     }
     console.log(this.state);
@@ -42,13 +43,13 @@ class MatchList extends Component {
 
           <Text><FontAwesome style={styles.fontAwesome}>{Icons.idCardO}
           </FontAwesome>    {maybe.age_minimum}</Text>
-          <Text style={{PaddingBottom: 5}} />
+          <Text style={{paddingBottom: 5}} />
           <Text>{maybe.description} </Text>
-          <Text style={{PaddingBottom: 5}} />
+          <Text style={{paddingBottom: 5}} />
           <Button onPress={() => Linking.openURL(maybe.url)}><Text> Sign up Now
            <FontAwesome style={styles.fontAwesome}> {Icons.externalLink}
           </FontAwesome> </Text> </Button>
-          <Text style={{PaddingBottom: 5}} />
+          <Text style={{paddingBottom: 5}} />
           </View>
         </ToggleBox>
 
@@ -70,25 +71,41 @@ class MatchList extends Component {
         'REMINDER: A parent must sign a consent form before you can volunteer',
         [
           {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-          {text: 'OK', onPress: this.pressBackButton.bind(this)},
+          {text: 'OK', onPress: () => this.setState({show:false})},
         ],
         { cancelable: false }
       )}
     }
-  showData() {
-    console.log('in showData function');
-    return
-    <ToggleBox label='Show me something' value='asd' style={{backgroundColor: '#ddd', borderBottomWidth: 1}}>
+    hideData() {
+      // this.setState({show:false})
+      // style={styles.hidden}
+      // console.log(this.state.show);
+      if (this.state.show == true){
+        // console.log('trying to style')
+      return <View visible={this.state.show} show={true}>
+        <Text style={{paddingTop: 20, paddingBottom: 6, backgroundColor: 'transparent', fontSize: 15}} >Send this list to my parent: </Text>
 
-      <View style={{height: 300, alignItems: 'center', justifyContent: 'center', backgroundColor: '#eee'}}>
+          <View style={{flexDirection: 'row', alignSelf: 'stretch'}}>
 
-      <Text>Hello, how are you?</Text>
-      </View>
-    </ToggleBox>
-    console.log('bottom of showData function');
-  }
+            <ButtonIcon onPress={this.onSend.bind(this)}>
+              <FontAwesome style={{fontSize: 30, color: '#007aff'}}>
+                {Icons.sendO}
+              </FontAwesome>
+            </ButtonIcon>
+
+            <TextInput
+              style={styles.formStyle}
+              placeholder="  mom@email.com"
+              label="Parent Email:"
+              value={this.state.parent_email}
+              onChangeText={(parent_email) => this.setState({parent_email})}
+            />
+          </View>
+        </View>
+      }
+    }
   render() {
-    const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle, fontAwesome } = styles;
+      const { pageStyle, viewStyle, listStyle, formStyle, errorTextStyle, fontAwesome } = styles;
 
     return (
       <IndividualCard >
@@ -111,13 +128,13 @@ class MatchList extends Component {
 
                 <Text><FontAwesome style={fontAwesome}>{Icons.idCardO}
                 </FontAwesome>    {this.state.card.age_minimum}</Text>
-                <Text style={{PaddingBottom: 5}} />
+                <Text style={{paddingBottom: 5}} />
                 <Text>{this.state.card.description} </Text>
-                <Text style={{PaddingBottom: 5}} />
+                <Text style={{paddingBottom: 5}} />
                 <Button onPress={() => Linking.openURL(this.state.card.url)}><Text> Sign up Now
                  <FontAwesome style={fontAwesome}> {Icons.externalLink}
                 </FontAwesome> </Text> </Button>
-                <Text style={{PaddingBottom: 5}} />
+                <Text style={{paddingBottom: 5}} />
                 </View>
 
               </ToggleBox>
@@ -139,26 +156,8 @@ class MatchList extends Component {
             onPress={this.pressBackButton.bind(this)}>
             New search
           </Button>
+          {this.hideData()}
 
-          <Text style={{paddingTop: 20, paddingBottom: 6, backgroundColor: 'transparent', fontSize: 15}} >Send this list to my parent: </Text>
-
-          <View style={{flexDirection: 'row', alignSelf: 'stretch'}}>
-
-            <ButtonIcon onPress={this.onSend.bind(this)}>
-              <FontAwesome style={{fontSize: 30, color: '#007aff'}}>
-                {Icons.sendO}
-              </FontAwesome>
-            </ButtonIcon>
-
-            <TextInput
-              style={formStyle}
-              placeholder="  mom@email.com"
-              label="Parent Email:"
-              value={this.state.parent_email}
-              onChangeText={(parent_email) => this.setState({parent_email})}
-            />
-
-          </View>
         <Text style={errorTextStyle}>
           {this.state.error}
         </Text>
@@ -208,8 +207,11 @@ const styles = {
   fontAwesome: {
     color: '#007aff',
     fontSize: 20,
-
   },
+  hidden: {
+    height: 0,
+    backgroundColor: 'rgb(158, 10, 81)'
+  }
 }
 
 
