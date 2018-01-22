@@ -8,6 +8,8 @@ import CardSection from './CardSection';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ToggleBox from './ToggleBox';
 import Communications from 'react-native-communications';
+import MatchButton from './MatchButton';
+
 
 class MatchList extends Component {
   constructor(props) {
@@ -87,7 +89,7 @@ class MatchList extends Component {
           <View style={{flexDirection: 'row', alignSelf: 'stretch'}}>
 
           <ButtonIcon onPress={this.onSend.bind(this)}>
-              <FontAwesome style={{fontSize: 30, color: '#007aff'}}>
+              <FontAwesome style={{fontSize: 30, justifyContent: 'center', color: 'white'}}>
                 {Icons.sendO}
               </FontAwesome>
             </ButtonIcon>

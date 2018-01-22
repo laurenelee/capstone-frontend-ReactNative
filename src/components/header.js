@@ -4,23 +4,24 @@ import { Text, View } from 'react-native';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ButtonIcon from './ButtonIcon';
 
-
+// <ButtonIcon>
+//   <FontAwesome style={fontAwesome}>
+//     {props.fontAwesome1}
+//   </FontAwesome>
+// </ButtonIcon>
+// <FontAwesome style={fontAwesome}>
+//   {props.fontAwesome2}
+// </FontAwesome>
 const Header = (props) => {
   const { textStyle, mainStyle, fontAwesome } = styles;
 
   return (
     <View style={mainStyle}>
-      <ButtonIcon>
-        <FontAwesome style={fontAwesome}>
-          {props.fontAwesome1}
-        </FontAwesome>
-      </ButtonIcon>
+
       <Text style={textStyle}>
         {props.headerText}
       </Text>
-      <FontAwesome style={fontAwesome}>
-        {props.fontAwesome2}
-      </FontAwesome>
+
     </View>
   );
 };

@@ -15,7 +15,22 @@ const Button = ({ onPress, children }) => {
 
 const styles = {
   buttonStyle: {
-    paddingRight: 3
+    marginRight: 3,
+    // paddingRight: 5,
+    // paddingLeft: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 40,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#EC174F',
+    borderRadius: 4,
+    backgroundColor: '#f097ae',
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3},
   }
 };
 
