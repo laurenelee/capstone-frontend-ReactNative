@@ -24,7 +24,7 @@ class ToggleBox extends React.Component {
   }
 
   static defaultProps = {
-    arrowColor: '#007aff',
+    arrowColor: '#EC174F',
     arrowSize: 30,
     arrowDownType: 'keyboard-arrow-down',
     arrowUpType: 'keyboard-arrow-up',
