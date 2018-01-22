@@ -12,12 +12,15 @@ const Header = (props) => {
     <View style={mainStyle}>
       <ButtonIcon>
         <FontAwesome style={fontAwesome}>
-          {props.fontAwesome}
+          {props.fontAwesome1}
         </FontAwesome>
       </ButtonIcon>
       <Text style={textStyle}>
         {props.headerText}
       </Text>
+      <FontAwesome style={fontAwesome}>
+        {props.fontAwesome2}
+      </FontAwesome>
     </View>
   );
 };

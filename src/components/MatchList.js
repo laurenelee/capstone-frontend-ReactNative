@@ -7,7 +7,7 @@ import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ToggleBox from './ToggleBox';
-
+import Communications from 'react-native-communications';
 
 class MatchList extends Component {
   constructor(props) {
@@ -66,6 +66,7 @@ class MatchList extends Component {
     if (this.state.parent_email == '') {
       this.setState( {error: 'Email required'});
     } else {
+      Communications.email(this.state.parent_email,null,null,'Volunteer Opportunities','Here is a list of agencies!')
       Alert.alert(
         'Press OK to send this list to your parent',
         'REMINDER: A parent must sign a consent form before you can volunteer',
@@ -74,20 +75,18 @@ class MatchList extends Component {
           {text: 'OK', onPress: () => this.setState({show:false})},
         ],
         { cancelable: false }
-      )}
+        )
+      }
     }
+    // email(to, cc, bcc, subject, body)
     hideData() {
-      // this.setState({show:false})
-      // style={styles.hidden}
-      // console.log(this.state.show);
       if (this.state.show == true){
-        // console.log('trying to style')
       return <View visible={this.state.show} show={true}>
         <Text style={{paddingTop: 20, paddingBottom: 6, backgroundColor: 'transparent', fontSize: 15}} >Send this list to my parent: </Text>
 
           <View style={{flexDirection: 'row', alignSelf: 'stretch'}}>
 
-            <ButtonIcon onPress={this.onSend.bind(this)}>
+          <ButtonIcon onPress={this.onSend.bind(this)}>
               <FontAwesome style={{fontSize: 30, color: '#007aff'}}>
                 {Icons.sendO}
               </FontAwesome>
@@ -101,6 +100,10 @@ class MatchList extends Component {
               onChangeText={(parent_email) => this.setState({parent_email})}
             />
           </View>
+          <Text style={styles.errorTextStyle}>
+            {this.state.error}
+          </Text>
+          <Text style={{paddingBottom: 10}} />
         </View>
       }
     }
@@ -161,10 +164,7 @@ class MatchList extends Component {
           </Button>
           {this.hideData()}
 
-        <Text style={errorTextStyle}>
-          {this.state.error}
-        </Text>
-        <Text style={{paddingBottom: 10}} />
+
 
         </CardSection>
         </ScrollView>

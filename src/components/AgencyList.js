@@ -8,8 +8,6 @@ import Header from './header';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import MatchButton from './MatchButton';
 
-
-
 class AgencyList extends Component {
   constructor(props) {
     super(props);
