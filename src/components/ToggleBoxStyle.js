@@ -19,8 +19,9 @@ export default StyleSheet.create({
 
   },
   label: {
-    fontWeight: 'bold'
-    // flex: 5,
+    fontWeight: 'bold',
+    color: '#EC174F',
+    flex: 5,
   },
   value: {
     // flex: 5,
@@ -28,7 +29,7 @@ export default StyleSheet.create({
     textAlign: 'right',
   },
   buttonImage: {
-    // flex: 1,
+    flex: 1,
     textAlign: 'right',
   },
   body: {

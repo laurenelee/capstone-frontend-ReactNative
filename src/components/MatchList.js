@@ -115,10 +115,8 @@ class MatchList extends Component {
 
 
     return (
-
-      <IndividualCard >
       <ScrollView >
-
+        <IndividualCard>
         <CardSection>
           <View style={pageStyle}>
             <Text style={viewStyle}>Your <B>Yes</B> Matches: </Text>
@@ -166,12 +164,9 @@ class MatchList extends Component {
           </Button>
           {this.hideData()}
 
-
-
         </CardSection>
-        </ScrollView>
       </IndividualCard>
-
+      </ScrollView>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 const Input = ({ label, value, onChangeText, placeholder }) => {
 const { inputStyle, labelStyle, containerStyle } = styles;

@@ -24,7 +24,7 @@ class ToggleBox extends React.Component {
   }
 
   static defaultProps = {
-    arrowColor: 'rgb(178, 178, 178)',
+    arrowColor: '#007aff',
     arrowSize: 30,
     arrowDownType: 'keyboard-arrow-down',
     arrowUpType: 'keyboard-arrow-up',
@@ -96,9 +96,9 @@ class ToggleBox extends React.Component {
         >
           <View style={styles.titleContainer}>
 
-            <Image style={{width: 30, height: 30, borderRadius: 15}} source= {{ uri: this.props.photo_url}}/>
+            <Image style={{width: 30, height: 30, borderRadius: 15, flex: 1}} source= {{ uri: this.props.photo_url}}/>
 
-            <Text style={styles.label}>{this.props.label}</Text>
+            <Text style={styles.label}>   {this.props.label}</Text>
 
             {this.props.value ? <Text style={styles.value}>{this.props.value}</Text> : null}
 

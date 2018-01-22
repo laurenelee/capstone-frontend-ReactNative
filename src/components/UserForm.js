@@ -5,6 +5,7 @@ import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import Button from './Button';
 import Input from './Input';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 class UserForm extends Component {
   state = { name: '', age_minimum: '', volunteer_type: '', zip: '', parent_email: '' };
@@ -67,6 +68,7 @@ class UserForm extends Component {
       <Input
       placeholder="Ada Lovelace"
       label="Name:"
+      
       value={this.state.name}
       onChangeText={name => this.setState({ name })}
       />
