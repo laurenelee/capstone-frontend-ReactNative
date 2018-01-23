@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Alert } from 'react-native';
 import axios from 'axios';
-import AgencyDetail from './AgencyDetail';
 import Button from './Button';
 import AgencyCards from './AgencyCards';
 import Header from './header';
