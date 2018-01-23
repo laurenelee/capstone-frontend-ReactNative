@@ -1,6 +1,6 @@
 # capstone-frontend-ReactNative
-VOLLEY: A React Native app 
-Lauren Lee 
+VOLLEY: A React Native app  
+Lauren Lee  
 Ada Developers Academy C[8] independent project
 
 ## Problem Statement:
@@ -17,5 +17,50 @@ Libraries / Dependencies utilized
 - React-Native-FontAwesome 
 - React-Native-Swipe-Cards 
 - React-Native-Vector-Icons 
-- React-Native-Communications
+- React-Native-Communications 
+-----
+## User Demo: 
+
+Welcome Screen:
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%201.png" width="200">
+
+-----
+
+Tutorial:
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif1.gif" width="200">
+
+-----
+
+User inputs data:  
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif2.gif" width="200">
+
+-------
+
+Swiping:
+Swipe Left for NO   
+Swipe Up for MAYBE  
+Swipe Right for YES     
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif3.gif" width="200">
+
+-----
+
+Match Page:   
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%208.png" width="200">
+
+-----
+
+Navigate to external link to sign up using Volunteer Match:  
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif4.gif" width="200">
+
+------
+
+See all Maybe and Yes matches and send list to a parent via email:  
+
+<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif5.gif" width="200">
 
