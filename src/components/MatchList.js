@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Linking, Image, TextInput, Alert, ScrollView } from 'react-native';
+import { Share, Text, View, Linking, Image, TextInput, Alert, ScrollView } from 'react-native';
 import Header from './header';
 import Button from './Button';
 import ButtonIcon from './ButtonIcon';
@@ -7,8 +7,11 @@ import IndividualCard from './IndividualCard';
 import CardSection from './CardSection';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ToggleBox from './ToggleBox';
-import Communications from 'react-native-communications';
 import MatchButton from './MatchButton';
+// import Mailer from 'react-native-mail';
+import Communications from 'react-native-communications';
+
+var Mailer = require('NativeModules').RNMail;
 
 
 class MatchList extends Component {
@@ -62,8 +65,36 @@ class MatchList extends Component {
     console.log(msg)
   }
   sendEmail() {
+    // Mailer.mail({
+    //   subject: 'need help',
+    //   recipients: ['support@example.com'],
+    //   ccRecipients: ['supportCC@example.com'],
+    //   bccRecipients: ['supportBCC@example.com'],
+    //   body: '<b>A Bold Body</b>',
+    //   isHTML: true,
+    //   attachment: {
+    //     path: '',  // The absolute path of the file from which to read data.
+    //     type: '',   // Mime Type: jpg, png, doc, ppt, html, pdf
+    //     name: '',   // Optional: Custom filename for attachment
+    //   }
+    // }, (error, event) => {
+    //   Alert.alert(
+    //     error,
+    //     event,
+    //     [
+    //       {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+    //       {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+    //     ],
+    //     { cancelable: true }
+    //   )
+    // });
     this.alert('List sent!')
   }
+  // Linking.openURL('mailto:example@gmail.com?subject=Volunteering&body=example')
+  // Share.share({
+    //   message: 'Such sharing! Much wow!'
+    // })
+  //  .then(this._showResult)
   onSend() {
     if (this.state.parent_email == '') {
       this.setState( {error: 'Email required'});
@@ -170,7 +201,8 @@ class MatchList extends Component {
     )
   }
 }
-
+// ) from new search
+//
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
