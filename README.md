@@ -39,7 +39,7 @@ User inputs data:
 
 -------
 
-Swiping:
+Swiping:  
 Swipe Left for NO   
 Swipe Up for MAYBE  
 Swipe Right for YES     
@@ -64,3 +64,5 @@ See all Maybe and Yes matches and send list to a parent via email:
 
 <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif5.gif" width="200">
 
+## Presentation:
+[Google Slides](https://docs.google.com/presentation/d/1AvGYqhV_FjEr8DzLqZmk6H4dve9KL12pU5YCXbqBCss/edit?usp=sharing)
