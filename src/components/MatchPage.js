@@ -40,7 +40,7 @@ class MatchPage extends Component {
         <Header headerText={'Your Match'} />
           <IndividualCard>
             <CardSection>
-              <ImageBackground style={{width: 320, height: 350}} source={require("../../sparkler.jpeg")}>
+              <ImageBackground style={{width: 320, height: 350}} source={require("../../icons/sparkler.jpeg")}>
                 <View style={matchCard}>
                   <Text style={textStyle}>You matched with</Text><Text style={matchStyle}> {this.state.card.name}</Text>
                 </View>

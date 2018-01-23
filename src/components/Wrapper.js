@@ -121,11 +121,11 @@ class Wrapper extends Component {
 
       {this.state.pageToshow == '' && (
         <View>
-        <ImageBackground style={BackgroundImage} source={require("../../volley1.jpeg")}>
+        <ImageBackground style={BackgroundImage} source={require("../../icons/volley1.jpeg")}>
           <Text style={SplashPageText}> Welcome to VOLLEY </Text>
           <Image
           style={image}
-          source = {require("../../volley.png")} />
+          source = {require("../../icons/volley.png")} />
 
           <SplashPageButton onPress={this.onButtonPress.bind(this)}>
           Start the Search
