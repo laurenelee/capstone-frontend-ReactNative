@@ -4,14 +4,6 @@ import { Text, View } from 'react-native';
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 import ButtonIcon from './ButtonIcon';
 
-// <ButtonIcon>
-//   <FontAwesome style={fontAwesome}>
-//     {props.fontAwesome1}
-//   </FontAwesome>
-// </ButtonIcon>
-// <FontAwesome style={fontAwesome}>
-//   {props.fontAwesome2}
-// </FontAwesome>
 const Header = (props) => {
   const { textStyle, mainStyle, fontAwesome } = styles;
 
@@ -41,8 +33,6 @@ const styles = {
   fontAwesome: {
     fontSize: 30,
     color: '#007aff',
-    // alignItems: 'flex-start',
-
   },
 
   textStyle: {
@@ -51,5 +41,4 @@ const styles = {
   }
 };
 
-// make component available to other parts of app
 export default Header;

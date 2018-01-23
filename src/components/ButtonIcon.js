@@ -16,8 +16,6 @@ const Button = ({ onPress, children }) => {
 const styles = {
   buttonStyle: {
     marginRight: 3,
-    // paddingRight: 5,
-    // paddingLeft: 5,
     justifyContent: 'center',
     alignItems: 'center',
     width: 40,

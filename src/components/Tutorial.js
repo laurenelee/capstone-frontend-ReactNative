@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 
-
 const Tutorial = (props) => {
   const { textStyle, title } = styles;
 

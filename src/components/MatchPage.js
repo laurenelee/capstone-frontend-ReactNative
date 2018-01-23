@@ -101,7 +101,6 @@ const styles = {
     backgroundColor: 'transparent',
   },
   bottomButton: {
-    // paddingTop: 5,
     color: '#030907',
     height: 100,
     fontSize: 50

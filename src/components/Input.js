@@ -38,5 +38,4 @@ const styles = {
     alignItems: 'center'
   }
 };
-// export { Input }; // tutorial wants to do it this way... but it errors
 export default Input;

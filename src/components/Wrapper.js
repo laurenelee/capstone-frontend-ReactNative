@@ -214,7 +214,6 @@ class Wrapper extends Component {
 
 const styles = {
   SplashPageText: {
-    // alignSelf: 'center',
     fontFamily: 'AmericanTypewriter-Bold',
     textAlign: 'center',
     paddingTop: 80,

@@ -123,12 +123,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingLeft: 15,
     paddingRight: 15
-    // alignItems: 'center'
   },
   fontAwesome: {
     color: '#007aff',
     fontSize: 20,
-
   },
   imageStyle: {
     flexDirection: 'column',
@@ -143,8 +141,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
-    // width: 50,
-    // height: 50,
   }
 })
 

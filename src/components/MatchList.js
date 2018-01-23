@@ -23,7 +23,6 @@ class MatchList extends Component {
       maybeMatches: props.maybeMatches,
       parent_email: '',
       show: true
-      // cards: props.agencies,
     }
     console.log(this.state);
   }
@@ -201,27 +200,20 @@ class MatchList extends Component {
     )
   }
 }
-// ) from new search
-//
+
 const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 const styles = {
   viewStyle: {
     fontSize: 23,
-    // fontFamily: 'AmericanTypewriter',
-    // marginLeft: -30,
     paddingTop: 10,
     paddingBottom: 10,
     color: 'black',
   },
   listStyle: {
-    // textAlign: 'center',
-    // fontSize: 25,
     paddingBottom: 2,
-    // marginLeft: 80
   },
   pageStyle: {
-    // paddingTop: 10,
     paddingBottom: 20
   },
   formStyle: {

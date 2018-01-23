@@ -38,8 +38,6 @@ const styles = {
     marginRight: 5,
     marginTop: 10,
     backgroundColor: '#f097ae',
-    // marginLeft: 5,
-    // marginRight: 5
   }
 };
 

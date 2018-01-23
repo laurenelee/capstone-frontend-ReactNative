@@ -23,11 +23,6 @@ const styles = {
     marginLeft: 5,
     marginRight: 5,
     marginTop: 10,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // width: 300,
-    // height: 00,
-
   }
 };
 
