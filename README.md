@@ -20,22 +20,9 @@ Libraries / Dependencies utilized
 - React-Native-Communications 
 -----
 ## User Demo: 
-
-Welcome Screen:
-
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%201.png" width="200">
-
------
-
-Tutorial:
-
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif1.gif" width="200">
-
------
-
-User inputs data:  
-
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif2.gif" width="200">
+| Welcome Screen  | Tutorial | Input user data  |
+| ----------- |:----------------:| --------------- |
+| <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%201.png" alt="welcome" width= "300px"/> | <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif1.gif" alt="tutorial" width= "300px"/> | <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif2.gif" alt="userdata" width= "300px"/> |
 
 -------
 
@@ -46,23 +33,13 @@ Swipe Right for YES
 
 <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif3.gif" width="200">
 
------
+-----  
 
-Match Page:   
+| Match Page  | Navigate to External Link | See matches and send email  |
+| ----------- |:----------------:| --------------- |
+| <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%208.png" alt="matchpage" width= "300px"/> | <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif4.gif" alt="navigation" width= "300px"/> | <img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif5.gif" alt="seematches" width= "300px"/> |
 
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/screenshots/volley%208.png" width="200">
-
------
-
-Navigate to external link to sign up using Volunteer Match:  
-
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif4.gif" width="200">
-
-------
-
-See all Maybe and Yes matches and send list to a parent via email:  
-
-<img src="https://github.com/laurenelee/capstone-frontend-ReactNative/blob/master/gifs/volleygif5.gif" width="200">
+-----  
 
 ## Presentation:
 [Google Slides](https://docs.google.com/presentation/d/1AvGYqhV_FjEr8DzLqZmk6H4dve9KL12pU5YCXbqBCss/edit?usp=sharing)
